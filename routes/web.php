@@ -27,7 +27,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
 //Admin Panel Routes
 Route::get('/viewmaster', [ViewController::class, 'viewmaster'])->name('viewmaster');
 Route::post('/addmaster',[MasterController::class,'addmaster'])->name('addmaster');
@@ -37,5 +36,8 @@ Route::post('/createsubmaster', [MasterController::class, 'createsubmaster'])->n
 Route::get('/getmastercatajax/{selectedCat}', [MasterController::class, 'getmastercatajax'])->name('getmastercatajax');
 // Route::get('/viewteamsignup', [ViewController::class, 'viewteamsignup'])->name('viewteamsignup');
 Route::post('/signup_submit', [StoreController::class, 'signup_submit']);
-
+Route::post('/verifteamyotp', [StoreController::class, 'verifteamyotp'])->name('verifteamyotp');
+Route::get('/viewteamregister', [ViewController::class, 'viewteamregister'])->name('viewteamregister');
+Route::post('/registerteam', [StoreController::class, 'registerteam'])->name('registerteam');
+Route::get('/thankyouview', [ViewController::class, 'thankyouview'])->name('thankyouview');
 

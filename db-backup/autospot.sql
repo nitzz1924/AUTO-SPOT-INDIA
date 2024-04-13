@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2024 at 03:18 PM
+-- Generation Time: Apr 13, 2024 at 01:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -200,7 +200,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('KuWt9Bd1azozzIxBhC1JBkuqXRBbzLiUCTkk5D7O', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiTVNCUU80QnBxaWc1a3luWWRpV01WZzVoUW02cWFUdnM4Mk55dmdlNyI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjIxOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMiRJL2suUzg2cUgveVlYek1NM1A3UHEuVDVWNks3Tm5hV09pUHdMWXVoai5vNzJ3L3h5MXBrSyI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1712927816);
+('LItDNtNfSir99PR7DfcBnjHl2RfVVNSZWtbEdtqz', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidUN2aGVlSUszWmxIeEtvZGRTWVVHeXpXd1Z6VFpJbTFCTkp5NEY0TiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90aGFua3lvdXZpZXciO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1713005763);
 
 -- --------------------------------------------------------
 
@@ -210,6 +210,7 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 
 CREATE TABLE `teams` (
   `id` int(11) NOT NULL,
+  `teamid` varchar(255) DEFAULT NULL,
   `fullname` varchar(255) NOT NULL,
   `mobilenumber` varchar(255) NOT NULL,
   `verifyotp` varchar(255) NOT NULL,
@@ -225,12 +226,22 @@ CREATE TABLE `teams` (
   `communicationaddress` text DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `state` varchar(255) DEFAULT NULL,
-  `vehicletype` varchar(255) DEFAULT NULL,
+  `buggy` varchar(255) DEFAULT NULL,
+  `quad` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `status` varchar(255) NOT NULL DEFAULT '0',
+  `verifystatus` varchar(255) NOT NULL DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `teams`
+--
+
+INSERT INTO `teams` (`id`, `teamid`, `fullname`, `mobilenumber`, `verifyotp`, `teamname`, `captainname`, `institutionname`, `coachname`, `institutetype`, `instituterecognizedby`, `email`, `teamsize`, `alternatecontactnumber`, `communicationaddress`, `city`, `state`, `buggy`, `quad`, `password`, `status`, `verifystatus`, `created_at`, `updated_at`) VALUES
+(23, 'MAC00023', 'abc', '8209165518', '499028', 'terrorists', 'abc', 'abcd institute', 'king', 'College', 'king', 'ans@gmail.com', '5', '2154589526', '305001', 'Ajmer', 'Rajasthan', 'electric', NULL, '$2y$12$HoQeAgzQqx.hMNyOy9zWruXruFqJyxL2V2gO516sUae3dPydyvRUe', '0', '1', '2024-04-13 03:48:13', '2024-04-13 05:14:06'),
+(24, 'MAC00024', 'kishan', '2236254898', '395530', 'kishanapks', 'abcddd', 'kishan institute', 'king', 'College', 'king', 'ks@gmail.com', '20', '2154589526', '305001', 'Ajmer', 'Rajasthan', 'combustion', 'combustion', '$2y$12$7hJsHvKOCt9n/7stgeOheuhmm2t6AEboSt73Gwl0HNBzRDrzZYhcO', '0', '1', '2024-04-13 05:16:21', '2024-04-13 05:17:38');
 
 -- --------------------------------------------------------
 
@@ -382,7 +393,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`

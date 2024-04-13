@@ -7,5 +7,28 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'id',
+        'teamid',
+        'verifystatus',
+        'fullname',
+        'captainname',
+        'teamname',
+        'verifyotp',
+        'mobilenumber',
+        'institutionname',
+        'coachname',
+        'instituterecognizedby',
+        'email',
+        'teamsize',
+        'alternatecontactnumber',
+        'city',
+        'state',
+        'password',
+        'institutetype',
+        'buggy',
+        'quad',
+        'communicationaddress',
+        'status'
+    ];
 }

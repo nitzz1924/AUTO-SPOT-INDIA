@@ -5,7 +5,6 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Team Sign Up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -25,9 +24,9 @@
 
 </head>
 
-<body style="background-image: url('{{ asset('assets/images/backgroundfinal.jpg') }}'); background-repeat:no-repeat; background-size:cover;">
-    @stack('title')
-    <div class="auth-page-wrapper pt-5">
+<body>
+    <div class="auth-page-wrapper">
+        @stack('title')
         @yield('main-section')
     </div>
     <footer class="footer bg-black">
@@ -58,6 +57,7 @@
 
     <!-- password-addon init -->
     <script src="{{ asset('assets/js/pages/password-addon.init.js') }}"></script>
+    {{-- <script src="{{asset('assets/js/pages/two-step-verification.init.js')}}"></script> --}}
 </body>
 
 </html>
