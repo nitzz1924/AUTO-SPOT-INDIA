@@ -46,7 +46,7 @@
                                     <h4>Thank You for Team Registration</h4>
                                     <p class="text-muted mx-4">Be Fast or Be Last</p>
                                     <div class="mt-4">
-                                        <a href="#" class="btn btn-danger w-100">Login to Continue</a>
+                                        <a href="{{route('teamlogin')}}" class="btn btn-danger w-100">Login to Continue</a>
                                     </div>
                                 </div>
                             </div>

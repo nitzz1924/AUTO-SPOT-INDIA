@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Team;
 use Exception;
 use Illuminate\Http\Request;
-
+use Auth;
 class StoreController extends Controller
 {
     public function signup_submit(Request $req)
@@ -74,5 +74,24 @@ class StoreController extends Controller
              return back()->with('error', $e->getMessage());
             //  return redirect()->route('viewteamregister')->with('error', 'Invalid Details Try Again...');
         }
+    }
+
+    public function teamauthlogin(Request $request)
+    {
+        // dd($request->vendoremail);
+        $credentials = $request->only('teamid', 'password');
+        $data = Team::where('teamid', $credentials)->get();
+
+        if ($data && Auth::guard('teams')->attempt($credentials)) {
+            return redirect()->route('teamdashboard');
+        }
+        return redirect()->route('teamlogin')->with('error', 'Invalid credentials');
+    }
+
+    public function logoutteamlogin()
+    {
+        \Session::flush();
+        Auth::guard('teams')->logout();
+        return redirect()->route('teamlogin');
     }
 }

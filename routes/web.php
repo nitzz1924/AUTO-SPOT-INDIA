@@ -34,10 +34,15 @@ Route::get('/deletemastercat/{id}/{type}', [MasterController::class, 'deletemast
 Route::get('/viewsubmaster', [ViewController::class, 'viewsubmaster'])->name('viewsubmaster');
 Route::post('/createsubmaster', [MasterController::class, 'createsubmaster'])->name('createsubmaster');
 Route::get('/getmastercatajax/{selectedCat}', [MasterController::class, 'getmastercatajax'])->name('getmastercatajax');
-// Route::get('/viewteamsignup', [ViewController::class, 'viewteamsignup'])->name('viewteamsignup');
 Route::post('/signup_submit', [StoreController::class, 'signup_submit']);
 Route::post('/verifteamyotp', [StoreController::class, 'verifteamyotp'])->name('verifteamyotp');
 Route::get('/viewteamregister', [ViewController::class, 'viewteamregister'])->name('viewteamregister');
 Route::post('/registerteam', [StoreController::class, 'registerteam'])->name('registerteam');
 Route::get('/thankyouview', [ViewController::class, 'thankyouview'])->name('thankyouview');
 
+
+//Team Panel Routes
+Route::get('/teamdashboard', [ViewController::class, 'teamdashboard'])->name('teamdashboard');
+Route::get('/teamlogin', [ViewController::class, 'teamlogin'])->name('teamlogin');
+Route::post('/teamauthlogin', [StoreController::class, 'teamauthlogin'])->name('teamauthlogin');
+Route::get('/logoutteamlogin', [StoreController::class, 'logoutteamlogin'])->name('logoutteamlogin');

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\Master;
 use App\Models\Team;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
-
+use Auth;
 class ViewController extends Controller
 {
     public function viewmaster(Request $res)
@@ -33,5 +34,17 @@ class ViewController extends Controller
     public function thankyouview()
     {
         return view('auth.UserAuth.thankyou');
+    }
+    public function teamdashboard()
+    {
+        if (Auth::guard('teams')->check()) {
+            return view('TeamPanel.dashboard');
+        } else {
+            return redirect()->route('teamlogin');
+        }
+    }
+    public function teamlogin()
+    {
+        return view('auth.TeamAuth.login');
     }
 }

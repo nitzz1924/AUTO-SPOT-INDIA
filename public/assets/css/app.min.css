@@ -35,6 +35,12 @@
   src: local("hkgrotesk bold"), url(../fonts/hkgrotesk-bold.woff) format("woff");
   font-weight: 700;
 }
+.permanent-marker-regular {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 #page-topbar {
   position: fixed;
   top: 0;
