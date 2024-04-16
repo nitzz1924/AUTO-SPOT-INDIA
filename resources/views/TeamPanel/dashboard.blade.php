@@ -47,17 +47,12 @@
                                                     <i class="ri-pulse-line"></i>
                                                 </button>
                                             </div>
-                                            <!--end col-->
                                         </div>
-                                        <!--end row-->
                                     </form>
                                 </div>
                             </div>
-                            <!-- end card header -->
                         </div>
-                        <!--end col-->
                     </div>
-                    <!--end row-->
 
 
                     <div class="row">

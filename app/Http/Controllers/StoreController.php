@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 #{{-- --------------------------------------------------🙏🔱ॐ नमः शिवाय🔱🙏------------------------------------- --}}
 use App\Models\Team;
+use App\Models\TeamMember;
 use Exception;
 use Illuminate\Http\Request;
 use Auth;
@@ -93,5 +94,46 @@ class StoreController extends Controller
         \Session::flush();
         Auth::guard('teams')->logout();
         return redirect()->route('teamlogin');
+    }
+
+    public function createteammember(Request $req)
+    {
+        try {
+            $req->validate([
+                'emailaddress' => 'unique:team_members',
+                'mobile' => 'required|max_digits:10',
+            ]);
+            $imagePath = null;
+            $imagePathinvoice = null;
+
+            //Images Uploading
+            if ($req->hasFile('memberphoto')) {
+                $image = $req->file('memberphoto');
+                $imagePath = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('uploads'), $imagePath);
+            }
+            if ($req->hasFile('idproofmember')) {
+                $image = $req->file('idproofmember');
+                $imagePathinvoice = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('uploads'), $imagePathinvoice);
+            }
+
+            TeamMember::create([
+                'membername' => $req->membername,
+                'emailaddress' => $req->emailaddress,
+                'mobile' => $req->mobile,
+                'age' => $req->age,
+                'role' => $req->role,
+                'gender' => $req->gender,
+                'graduationyear' => $req->graduationyear,
+                'bloodgroup' => $req->bloodgroup,
+                'memberphoto' => $imagePath,
+                'idproofmember' => $imagePathinvoice,
+            ]);
+            return redirect()->route('teammemberaddview')->with('success', 'Member Added!!!!');
+        } catch (Exception $bv) {
+            return redirect()->route('teammemberaddview')->with('error', $bv->getMessage());
+            //return redirect()->route('teammemberaddview')->with('error', 'Not added Try Again...');
+        }
     }
 }

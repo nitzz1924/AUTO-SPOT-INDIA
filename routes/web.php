@@ -46,3 +46,5 @@ Route::get('/teamdashboard', [ViewController::class, 'teamdashboard'])->name('te
 Route::get('/teamlogin', [ViewController::class, 'teamlogin'])->name('teamlogin');
 Route::post('/teamauthlogin', [StoreController::class, 'teamauthlogin'])->name('teamauthlogin');
 Route::get('/logoutteamlogin', [StoreController::class, 'logoutteamlogin'])->name('logoutteamlogin');
+Route::get('/teammemberaddview', [ViewController::class, 'teammemberaddview'])->name('teammemberaddview');
+Route::post('/createteammember', [StoreController::class, 'createteammember'])->name('createteammember');

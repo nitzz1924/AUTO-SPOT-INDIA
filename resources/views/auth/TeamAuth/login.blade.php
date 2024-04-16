@@ -4,7 +4,6 @@
     @push('title')
         <title>Log in | Auto Sports India</title>
     @endpush
-
     <body
         style="background-image: url('{{ asset('assets/images/loginbackone.jpg') }}'); background-repeat:no-repeat; background-size:cover; background-position:top;">
         <div class="auth-page-content overflow-hidden pt-lg-5" style="margin-top: 10%;">
@@ -30,7 +29,7 @@
                                                 style="font-family: Permanent Marker, cursive; text-shadow: 2px 2px 2px black;">
                                                 Welcome Back</h3>
                                             <div class="mt-4">
-                                                <form action="{{route('teamauthlogin')}}" method="POST">
+                                                <form action="{{ route('teamauthlogin') }}" method="POST">
                                                     @csrf
                                                     <div class="mb-3">
                                                         <label for="username" class="form-label">Team ID</label>
@@ -42,8 +41,7 @@
                                                         <label class="form-label" for="password-input">Password</label>
                                                         <div class="position-relative auth-pass-inputgroup mb-3">
                                                             <input type="password" class="form-control pe-5 password-input"
-                                                                placeholder="password" name="password"
-                                                                id="password-input">
+                                                                placeholder="password" name="password" id="password-input">
                                                             {{-- <button
                                                                 class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
                                                                 type="button" id="password-addon"><i

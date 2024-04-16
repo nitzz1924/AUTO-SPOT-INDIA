@@ -64,7 +64,7 @@
                     </div>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#">
+                    <a class="nav-link menu-link" href="{{route('teammemberaddview')}}">
                         <i class="bx bx-plus"></i>
                         <span>Add Team Member</span>
                     </a>

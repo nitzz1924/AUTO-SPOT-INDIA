@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2024 at 01:11 PM
+-- Generation Time: Apr 16, 2024 at 03:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -200,7 +200,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('LItDNtNfSir99PR7DfcBnjHl2RfVVNSZWtbEdtqz', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidUN2aGVlSUszWmxIeEtvZGRTWVVHeXpXd1Z6VFpJbTFCTkp5NEY0TiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90aGFua3lvdXZpZXciO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1713005763);
+('xfT1bC7rMIHhsxXOktlCNmzBhNLQAkAEzzkm68Ga', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiMkRsMGs0Q2M1OHEyRWZHZTBzd1dWTGQ5SWV0Wmd4VDNXSlJFbXp5eCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90ZWFtbWVtYmVyYWRkdmlldyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX3RlYW1zXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjU7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozMToiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2Rhc2hib2FyZCI7fX0=', 1713272060);
 
 -- --------------------------------------------------------
 
@@ -241,7 +241,30 @@ CREATE TABLE `teams` (
 
 INSERT INTO `teams` (`id`, `teamid`, `fullname`, `mobilenumber`, `verifyotp`, `teamname`, `captainname`, `institutionname`, `coachname`, `institutetype`, `instituterecognizedby`, `email`, `teamsize`, `alternatecontactnumber`, `communicationaddress`, `city`, `state`, `buggy`, `quad`, `password`, `status`, `verifystatus`, `created_at`, `updated_at`) VALUES
 (23, 'MAC00023', 'abc', '8209165518', '499028', 'terrorists', 'abc', 'abcd institute', 'king', 'College', 'king', 'ans@gmail.com', '5', '2154589526', '305001', 'Ajmer', 'Rajasthan', 'electric', NULL, '$2y$12$HoQeAgzQqx.hMNyOy9zWruXruFqJyxL2V2gO516sUae3dPydyvRUe', '0', '1', '2024-04-13 03:48:13', '2024-04-13 05:14:06'),
-(24, 'MAC00024', 'kishan', '2236254898', '395530', 'kishanapks', 'abcddd', 'kishan institute', 'king', 'College', 'king', 'ks@gmail.com', '20', '2154589526', '305001', 'Ajmer', 'Rajasthan', 'combustion', 'combustion', '$2y$12$7hJsHvKOCt9n/7stgeOheuhmm2t6AEboSt73Gwl0HNBzRDrzZYhcO', '0', '1', '2024-04-13 05:16:21', '2024-04-13 05:17:38');
+(24, 'MAC00024', 'kishan', '2236254898', '395530', 'kishanapks', 'abcddd', 'kishan institute', 'king', 'College', 'king', 'ks@gmail.com', '20', '2154589526', '305001', 'Ajmer', 'Rajasthan', 'combustion', 'combustion', '$2y$12$7hJsHvKOCt9n/7stgeOheuhmm2t6AEboSt73Gwl0HNBzRDrzZYhcO', '0', '1', '2024-04-13 05:16:21', '2024-04-13 05:17:38'),
+(25, 'MAC00025', 'testing', '6666666666', '156905', 'testingsszone', 'test', 'test', 'test', 'University', 'testt', 'testing@gmail.com', '6', '2154589526', '305002', 'Ajmer', 'Rajasthan', 'combustion', 'electric', '$2y$12$YGzrByYheywIw1uAomlgj.VqlmoDM6RY8zQ9MlaOV6puoWrFEcuVC', '0', '1', '2024-04-15 05:25:45', '2024-04-15 05:27:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `team_members`
+--
+
+CREATE TABLE `team_members` (
+  `id` int(11) NOT NULL,
+  `membername` varchar(255) NOT NULL,
+  `emailaddress` varchar(255) NOT NULL,
+  `mobile` varchar(255) NOT NULL,
+  `age` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `graduationyear` varchar(255) NOT NULL,
+  `bloodgroup` varchar(255) NOT NULL,
+  `memberphoto` text NOT NULL,
+  `idproofmember` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -349,6 +372,12 @@ ALTER TABLE `teams`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `team_members`
+--
+ALTER TABLE `team_members`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -393,7 +422,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `team_members`
+--
+ALTER TABLE `team_members`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

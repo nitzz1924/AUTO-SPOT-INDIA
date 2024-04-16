@@ -1,11 +1,13 @@
 <?php
 // {{-- --------------------------------------------------🙏🔱ॐ नमः शिवाय🔱🙏------------------------------------- --}}
 namespace App\Http\Controllers;
+
 use App\Models\Master;
 use App\Models\Team;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use Auth;
+
 class ViewController extends Controller
 {
     public function viewmaster(Request $res)
@@ -28,7 +30,7 @@ class ViewController extends Controller
     public function viewteamregister(Request $request)
     {
         $userdata = Team::find($request->id);
-        return view('auth.UserAuth.teamregister',compact('userdata'));
+        return view('auth.UserAuth.teamregister', compact('userdata'));
     }
 
     public function thankyouview()
@@ -46,5 +48,10 @@ class ViewController extends Controller
     public function teamlogin()
     {
         return view('auth.TeamAuth.login');
+    }
+
+    public function teammemberaddview(Request $request)
+    {
+        return view('TeamPanel.addteammember');
     }
 }
