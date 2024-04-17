@@ -48,3 +48,4 @@ Route::post('/teamauthlogin', [StoreController::class, 'teamauthlogin'])->name('
 Route::get('/logoutteamlogin', [StoreController::class, 'logoutteamlogin'])->name('logoutteamlogin');
 Route::get('/teammemberaddview', [ViewController::class, 'teammemberaddview'])->name('teammemberaddview');
 Route::post('/createteammember', [StoreController::class, 'createteammember'])->name('createteammember');
+Route::get('/allteammembersview', [ViewController::class, 'allteammembersview'])->name('allteammembersview');

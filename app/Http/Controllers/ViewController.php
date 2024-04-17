@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Master;
+use App\Models\Member;
 use App\Models\Team;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
@@ -53,5 +54,11 @@ class ViewController extends Controller
     public function teammemberaddview(Request $request)
     {
         return view('TeamPanel.addteammember');
+    }
+
+    public function allteammembersview(Request $request)
+    {
+        $teammembers = Member::get();
+        return view('TeamPanel.viewmem',compact('teammembers'));
     }
 }

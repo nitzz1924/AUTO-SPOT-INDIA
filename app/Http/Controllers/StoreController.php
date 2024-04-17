@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 #{{-- --------------------------------------------------🙏🔱ॐ नमः शिवाय🔱🙏------------------------------------- --}}
 use App\Models\Team;
-use App\Models\TeamMember;
+use App\Models\Member;
 use Exception;
 use Illuminate\Http\Request;
 use Auth;
@@ -100,7 +100,7 @@ class StoreController extends Controller
     {
         try {
             $req->validate([
-                'emailaddress' => 'unique:team_members',
+                'emailaddress' => 'unique:members',
                 'mobile' => 'required|max_digits:10',
             ]);
             $imagePath = null;
@@ -118,8 +118,8 @@ class StoreController extends Controller
                 $image->move(public_path('uploads'), $imagePathinvoice);
             }
 
-            TeamMember::create([
-                'membername' => $req->membername,
+            Member::create([
+                'member' => $req->membername,
                 'emailaddress' => $req->emailaddress,
                 'mobile' => $req->mobile,
                 'age' => $req->age,
@@ -131,7 +131,7 @@ class StoreController extends Controller
                 'idproofmember' => $imagePathinvoice,
             ]);
             return redirect()->route('teammemberaddview')->with('success', 'Member Added!!!!');
-        } catch (Exception $bv) {
+        }catch (Exception $bv) {
             return redirect()->route('teammemberaddview')->with('error', $bv->getMessage());
             //return redirect()->route('teammemberaddview')->with('error', 'Not added Try Again...');
         }

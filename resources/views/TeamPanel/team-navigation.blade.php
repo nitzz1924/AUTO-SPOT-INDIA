@@ -70,9 +70,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#">
+                    <a class="nav-link menu-link" href="{{route('allteammembersview')}}">
                         <i class="bx bx-add-to-queue"></i>
-                        <span>View Team</span>
+                        <span>All Team Members</span>
                     </a>
                 </li>
                 {{-- <li class="menu-title">
