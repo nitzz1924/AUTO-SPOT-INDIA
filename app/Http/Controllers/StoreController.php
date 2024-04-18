@@ -132,8 +132,8 @@ class StoreController extends Controller
             ]);
             return redirect()->route('teammemberaddview')->with('success', 'Member Added!!!!');
         }catch (Exception $bv) {
-            return redirect()->route('teammemberaddview')->with('error', $bv->getMessage());
-            //return redirect()->route('teammemberaddview')->with('error', 'Not added Try Again...');
+            //return redirect()->route('teammemberaddview')->with('error', $bv->getMessage());
+            return redirect()->route('teammemberaddview')->with('error', 'Not added Try Again...');
         }
     }
 }

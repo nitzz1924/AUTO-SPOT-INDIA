@@ -16,8 +16,43 @@
             </div>
         </div>
     </div>
-
     <div class="row">
+        <div class="col-12">
+            <div class="justify-content-between d-flex align-items-center mt-3 mb-4">
+                <h5 class="mb-0 pb-1">All Team Members</h5>
+                <a href="{{route('teammemberaddview')}}">
+                    <div class="text-right float-end">
+                        <button type="button" class="btn btn-success btn-label waves-effect waves-light"><i
+                                class="ri-add-fill label-icon align-middle fs-16 me-2"></i>Add New Member</button>
+                    </div>
+                </a>
+            </div>
+            <div class="row row-cols-xxl-5 row-cols-lg-3 row-cols-1">
+                @foreach ($teammembers as $index => $row)
+                <div class="col">
+                    <div class="card card-body">
+                        <div class="d-flex mb-4 align-items-center">
+                            <div class="flex-shrink-0">
+                                <img src="{{ asset('uploads/' . $row->memberphoto) }}" alt=""
+                                    class="avatar-sm rounded-circle" />
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <h5 class="card-title mb-1">{{ $row->member }}</h5>
+                                <p class="text-muted mb-0">{{ $row->emailaddress }}</p>
+                            </div>
+                        </div>
+                        <h6 class="mb-1">MEM{{ $row->id }}</h6>
+                        <p class="card-text text-muted">{{ $row->role }}</p>
+                        <a href="javascript:void(0)" class="btn btn-primary btn-sm openModalBtn"
+                            data-record-id="{{ json_encode($row) }}" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalgrid">See Details</a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    {{-- <div class="row">
         <div class="col-lg-12">
             <div class="card tablecard">
                 <div class="card-header">
@@ -73,82 +108,101 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
-<div id="showmasteredit" class="modal fadeInRight" tabindex="-1" aria-hidden="true" style="display: none;">
+<div class="modal zoomIn" id="exampleModalgrid" tabindex="-1" aria-labelledby="exampleModalgridLabel" aria-modal="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content border-0 overflow-hidden">
-            <div class="modal-header p-3 text-center">
-                <h4 class="card-title mb-0 ">BTech Mart</h4>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalteamname">Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="alert alert-success  rounded-0 mb-0">
-                <p class="mb-0 text-center">Edit Category</p>
+            <div class="modal-body" id="modalbodyteam">
+                {{--Appends Here from AJAX--}}
             </div>
-            <div class="modal-body">
-                <form action="javascript:void(0);">
-                    <div class="row  g-3 align-items-center">
-                        <div class="col-sm-4">
-                            <div>
-                                <label for="placeholderInput" class="form-label">Label</label>
-                                <input type="text" class="form-control" id="" placeholder="enter label" name="label">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div>
-                                <label for="placeholderInput" class="form-label">Value</label>
-                                <input type="text" class="form-control" id="valueval" placeholder="enter value"
-                                    name="value" value="">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div>
-                                <label for="placeholderInput" class="form-label">Upload Image</label>
-                                <input type="file" class="form-control" id="image" placeholder="enter color"
-                                    name="image">
-                            </div>
-                        </div>
-                        <div class="col-auto text-center w-100">
-                            <button type="submit" class="btn btn-primary">Update</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+        </div>
+    </div>
 </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("sa-warningid").addEventListener("click", function() {
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "You want to delete this Vehicle..?",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonClass: "btn btn-primary w-xs me-2 mt-2",
-                    cancelButtonClass: "btn btn-danger w-xs mt-2",
-                    confirmButtonText: '<a href="#" class="text-white">Yes, delete it!</a>',
-                    buttonsStyling: false,
-                    showCloseButton: true,
-                });
-            });
-        });
-</script>
-<script>
-    function state(rowId) {
-            var btn = document.getElementById('btnid' + rowId);
-            btn.disabled = true;
-            btn.classList.remove('btn-success');
-            btn.classList.add('btn-danger');
-            btn.textContent = "Deactivated";
-        }
-        // setTimeout(function() {
-        //     $('#successAlert').fadeOut('slow');
-        // }, 2000);
 
-        // setTimeout(function() {
-        //     $('#dangerAlert').fadeOut('slow');
-        // }, 2000);
-</script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.openModalBtn').on('click', function() {
+            var data = $(this).data('record-id');
+            console.log(data);
+            $('#modalbodyteam').empty();
+            var modalbody = `
+            <form action="javascript:void(0);">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div>
+                                <label for="emailInput" class="form-label">Member Photo</label>
+                                <img src="uploads/${data.memberphoto}" alt="Thumbnail"
+                                        class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <label for="emailInput" class="form-label">ID Proof Of Member</label>
+                                <img src="uploads/${data.idproofmember}" alt="Thumbnail"
+                                     class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mt-3">
+                                <label for="emailInput" class="form-label">Member Name</label>
+                                <input type="text" class="form-control" id="emailInput" readonly value="${data.member}">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Mobile</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.mobile}">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Age</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.age}">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Role</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.role}">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Gender</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.gender}">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Graduation Year</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.graduationyear}">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Blood Group</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.bloodgroup}">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="hstack gap-2 justify-content-end mt-3">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </form>
+            `;
+            $('#modalbodyteam').append(modalbody);
+
+        });
+    });
+</script>
 @endsection

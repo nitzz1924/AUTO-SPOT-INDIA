@@ -63,12 +63,12 @@
                         </ul>
                     </div>
                 </li> --}}
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="{{route('teammemberaddview')}}">
                         <i class="bx bx-plus"></i>
                         <span>Add Team Member</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{route('allteammembersview')}}">
                         <i class="bx bx-add-to-queue"></i>

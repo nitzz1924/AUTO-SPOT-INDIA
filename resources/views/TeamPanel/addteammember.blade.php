@@ -117,14 +117,14 @@
                                     <div class="input-group">
                                         <select class="form-select" id="displaytype" name="bloodgroup" required>
                                             <option selected>Choose...</option>
-                                            <option value="2022">A +ve</option>
-                                            <option value="2023">A -ve</option>
-                                            <option value="2024">B +ve</option>
-                                            <option value="2025">B -ve</option>
-                                            <option value="2026">O +ve</option>
-                                            <option value="2027">O -ve</option>
-                                            <option value="2028">AB +ve</option>
-                                            <option value="2029">AB -ve</option>
+                                            <option value="A +ve">A +ve</option>
+                                            <option value="A -ve">A -ve</option>
+                                            <option value="B +ve">B +ve</option>
+                                            <option value="B -ve">B -ve</option>
+                                            <option value="O +ve">O +ve</option>
+                                            <option value="O -ve">O -ve</option>
+                                            <option value="AB +ve">AB +ve</option>
+                                            <option value="AB -ve">AB -ve</option>
                                         </select>
                                     </div>
                                 </div>
