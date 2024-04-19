@@ -36,7 +36,7 @@
             <div id="two-column-menu"></div>
             <ul class="navbar-nav" id="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#">
+                    <a class="nav-link menu-link" href="{{route('teamdashboard')}}">
                         <i class="bx bxs-dashboard"></i>
                         <span>Dashboard</span>
                     </a>

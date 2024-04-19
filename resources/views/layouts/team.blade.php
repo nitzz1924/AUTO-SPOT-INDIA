@@ -238,8 +238,8 @@
                                     </div>
 
                                     <div class="px-2 pt-2">
-                                        <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom"
-                                            data-dropdown-tabs="true" id="notificationItemsTab" role="tablist">
+                                        <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true"
+                                            id="notificationItemsTab" role="tablist">
                                             <li class="nav-item waves-effect waves-light">
                                                 <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
                                                     role="tab" aria-selected="true">
@@ -247,14 +247,14 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item waves-effect waves-light">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#messages-tab"
-                                                    role="tab" aria-selected="false">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#messages-tab" role="tab"
+                                                    aria-selected="false">
                                                     Messages
                                                 </a>
                                             </li>
                                             <li class="nav-item waves-effect waves-light">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#alerts-tab"
-                                                    role="tab" aria-selected="false">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#alerts-tab" role="tab"
+                                                    aria-selected="false">
                                                     Alerts
                                                 </a>
                                             </li>
@@ -263,8 +263,7 @@
                                 </div>
 
                                 <div class="tab-content position-relative" id="notificationItemsTabContent">
-                                    <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab"
-                                        role="tabpanel">
+                                    <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab" role="tabpanel">
                                         <div data-simplebar style="max-height: 300px" class="pe-2">
                                             <div
                                                 class="text-reset notification-item d-block dropdown-item position-relative">
@@ -290,8 +289,8 @@
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="all-notification-check01" />
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="all-notification-check01" />
                                                             <label class="form-check-label"
                                                                 for="all-notification-check01"></label>
                                                         </div>
@@ -324,8 +323,8 @@
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="all-notification-check02" />
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="all-notification-check02" />
                                                             <label class="form-check-label"
                                                                 for="all-notification-check02"></label>
                                                         </div>
@@ -357,8 +356,8 @@
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="all-notification-check03" />
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="all-notification-check03" />
                                                             <label class="form-check-label"
                                                                 for="all-notification-check03"></label>
                                                         </div>
@@ -390,8 +389,8 @@
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="all-notification-check04" />
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="all-notification-check04" />
                                                             <label class="form-check-label"
                                                                 for="all-notification-check04"></label>
                                                         </div>
@@ -434,8 +433,8 @@
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="messages-notification-check01" />
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="messages-notification-check01" />
                                                             <label class="form-check-label"
                                                                 for="messages-notification-check01"></label>
                                                         </div>
@@ -466,8 +465,8 @@
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="messages-notification-check02" />
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="messages-notification-check02" />
                                                             <label class="form-check-label"
                                                                 for="messages-notification-check02"></label>
                                                         </div>
@@ -498,8 +497,8 @@
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="messages-notification-check03" />
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="messages-notification-check03" />
                                                             <label class="form-check-label"
                                                                 for="messages-notification-check03"></label>
                                                         </div>
@@ -529,8 +528,8 @@
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="messages-notification-check04" />
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="messages-notification-check04" />
                                                             <label class="form-check-label"
                                                                 for="messages-notification-check04"></label>
                                                         </div>
@@ -568,20 +567,20 @@
                         </div> --}}
 
                         <div class="dropdown ms-sm-3 header-item topbar-user">
-                            <button type="button" class="btn" id="page-header-user-dropdown"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 <span class="d-flex align-items-center">
                                     <img class="rounded-circle header-profile-user"
                                         src="{{ asset('assets/images/defaultuser.png') }}" alt="Header Avatar" />
                                     <span class="text-start ms-xl-2">
                                         @if (Auth::guard('teams')->check())
-                                            <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
-                                                {{ Auth::guard('teams')->user()->teamname }}
-                                            </span>
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
+                                            {{ Auth::guard('teams')->user()->teamname }}
+                                        </span>
                                         @else
-                                            <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
-                                                Guest User
-                                            </span>
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
+                                            Guest User
+                                        </span>
                                         @endif
                                     </span>
                                 </span>
@@ -599,8 +598,8 @@
                                         <form method="GET" action="{{ route('logoutteamlogin') }}" x-data>
                                             @csrf
                                             <button type="submit" class="dropdown-item">
-                                                <span
-                                                    class="mdi mdi-logout text-muted fs-16 align-middle me-1">{{ __('Log Out') }}</span>
+                                                <span class="mdi mdi-logout text-muted fs-16 align-middle me-1">{{
+                                                    __('Log Out') }}</span>
                                             </button>
                                         </form>
 
@@ -622,8 +621,8 @@
                     <div class="modal-body">
                         <div class="mt-2 text-center">
                             <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
-                                colors="primary:#f7b84b,secondary:#f06548"
-                                style="width: 100px; height: 100px"></lord-icon>
+                                colors="primary:#f7b84b,secondary:#f06548" style="width: 100px; height: 100px">
+                            </lord-icon>
                             <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
                                 <h4>Are you sure ?</h4>
                                 <p class="text-muted mx-4 mb-0">
@@ -664,7 +663,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by YUVMEDIA
+                                Powered by Rudraaahwi Technology
                             </div>
                         </div>
                     </div>
@@ -853,12 +852,10 @@
                                 <div class="form-check card-radio dark">
                                     <input class="form-check-input" type="radio" name="data-bs-theme"
                                         id="layout-mode-dark" value="dark" />
-                                    <label class="form-check-label p-0 avatar-md w-100 bg-dark"
-                                        for="layout-mode-dark">
+                                    <label class="form-check-label p-0 avatar-md w-100 bg-dark" for="layout-mode-dark">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
-                                                <span
-                                                    class="bg-white bg-opacity-10 d-flex h-100 flex-column gap-1 p-1">
+                                                <span class="bg-white bg-opacity-10 d-flex h-100 flex-column gap-1 p-1">
                                                     <span
                                                         class="d-block p-1 px-2 bg-white bg-opacity-10 rounded mb-2"></span>
                                                     <span class="d-block p-1 px-2 pb-0 bg-white bg-opacity-10"></span>
@@ -1001,14 +998,13 @@
                         </p>
 
                         <div class="btn-group radio" role="group">
-                            <input type="radio" class="btn-check" name="data-layout-position"
-                                id="layout-position-fixed" value="fixed" />
+                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed"
+                                value="fixed" />
                             <label class="btn btn-light w-sm" for="layout-position-fixed">Fixed</label>
 
                             <input type="radio" class="btn-check" name="data-layout-position"
                                 id="layout-position-scrollable" value="scrollable" />
-                            <label class="btn btn-light w-sm ms-0"
-                                for="layout-position-scrollable">Scrollable</label>
+                            <label class="btn btn-light w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
                         </div>
                     </div>
                     <h6 class="mt-4 mb-0 fw-bold text-uppercase">Topbar Color</h6>
@@ -1017,8 +1013,8 @@
                     <div class="row">
                         <div class="col-4">
                             <div class="form-check card-radio">
-                                <input class="form-check-input" type="radio" name="data-topbar"
-                                    id="topbar-color-light" value="light" />
+                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-light"
+                                    value="light" />
                                 <label class="form-check-label p-0 avatar-md w-100" for="topbar-color-light">
                                     <span class="d-flex gap-1 h-100">
                                         <span class="flex-shrink-0">
@@ -1042,8 +1038,8 @@
                         </div>
                         <div class="col-4">
                             <div class="form-check card-radio">
-                                <input class="form-check-input" type="radio" name="data-topbar"
-                                    id="topbar-color-dark" value="dark" />
+                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-dark"
+                                    value="dark" />
                                 <label class="form-check-label p-0 avatar-md w-100" for="topbar-color-dark">
                                     <span class="d-flex gap-1 h-100">
                                         <span class="flex-shrink-0">
@@ -1155,8 +1151,7 @@
                                 <div class="form-check sidebar-setting card-radio">
                                     <input class="form-check-input" type="radio" name="data-sidebar-size"
                                         id="sidebar-size-small-hover" value="sm-hover" />
-                                    <label class="form-check-label p-0 avatar-md w-100"
-                                        for="sidebar-size-small-hover">
+                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-small-hover">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
                                                 <span class="bg-light d-flex h-100 flex-column gap-1">
@@ -1443,10 +1438,8 @@
                                             </span>
                                         </span>
                                         <!-- <div id="preloader"> -->
-                                        <div id="status"
-                                            class="d-flex align-items-center justify-content-center">
-                                            <div class="spinner-border text-primary avatar-xxs m-auto"
-                                                role="status">
+                                        <div id="status" class="d-flex align-items-center justify-content-center">
+                                            <div class="spinner-border text-primary avatar-xxs m-auto" role="status">
                                                 <span class="visually-hidden">Loading...</span>
                                             </div>
                                         </div>
@@ -1495,8 +1488,8 @@
                     </button>
                 </div>
                 <div class="col-6">
-                    <a href="https://1.envato.market/velzon-admin" target="_blank"
-                        class="btn btn-primary w-100">Buy Now</a>
+                    <a href="https://1.envato.market/velzon-admin" target="_blank" class="btn btn-primary w-100">Buy
+                        Now</a>
                 </div>
             </div>
         </div>

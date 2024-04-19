@@ -1,1349 +1,1031 @@
 {{-- --------------------------------------------------🙏🔱ॐ नमः शिवाय🔱🙏------------------------------------- --}}
 @extends('layouts.team')
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="h-100">
-                    <div class="row mb-3 pb-1">
-                        <div class="col-12">
-                            <div class="d-flex align-items-lg-center flex-lg-row flex-column">
-                                <div class="flex-grow-1">
-                                    @if (Auth::guard('teams')->check())
-                                        <h4 class="fs-16 mb-1">Welcome {{ Auth::guard('teams')->user()->teamname }}</h4>
-                                    @else
-                                        <h4 class="fs-16 mb-1">Guest User</h4>
-                                    @endif
-                                    <p class="text-muted mb-0">
-                                        Hope You're Enjoying the game..😊😊
-                                    </p>
-                                </div>
-                                <div class="mt-3 mt-lg-0">
-                                    <form action="javascript:void(0);">
-                                        <div class="row g-3 mb-0 align-items-center">
-                                            {{-- <div class="col-sm-auto">
-                                                <div class="input-group">
-                                                    <input type="text"
-                                                        class="form-control border-0 dash-filter-picker shadow"
-                                                        data-provider="flatpickr" data-range-date="true"
-                                                        data-date-format="d M, Y"
-                                                        data-deafult-date="01 Jan 2022 to 31 Jan 2022" />
-                                                    <div class="input-group-text bg-primary border-primary text-white">
-                                                        <i class="ri-calendar-2-line"></i>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
-                                            <!--end col-->
-                                            {{-- <div class="col-auto">
-                                                <button type="button" class="btn btn-soft-success">
-                                                    <i class="ri-add-circle-line align-middle me-1"></i>
-                                                    Add Product
-                                                </button>
-                                            </div> --}}
-                                            <!--end col-->
-                                            <div class="col-auto">
-                                                <button type="button"
-                                                    class="btn btn-soft-info btn-icon waves-effect waves-light layout-rightside-btn">
-                                                    <i class="ri-pulse-line"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="card crm-widget">
-                                <div class="card-body p-0">
-                                    <div class="row row-cols-md-3 row-cols-1">
-                                        <div class="col col-lg border-end">
-                                            <div class="py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Users <i
-                                                        class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i>
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="ri-space-ship-line display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0"><span class="counter-value"
-                                                                data-target="30">0</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                        <div class="col col-lg border-end">
-                                            <div class="mt-3 mt-md-0 py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Agents <i
-                                                        class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i>
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="ri-exchange-dollar-line display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0"><span class="counter-value"
-                                                                data-target="40">0</span>k</h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                        <div class="col col-lg border-end">
-                                            <div class="mt-3 mt-md-0 py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Enquiries <i
-                                                        class="ri-arrow-down-circle-line text-danger fs-18 float-end align-middle"></i>
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="ri-pulse-line display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0"><span class="counter-value"
-                                                                data-target="100">0</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                        <div class="col col-lg border-end">
-                                            <div class="mt-3 mt-lg-0 py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Vendors <i
-                                                        class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i>
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="ri-trophy-line display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0"><span class="counter-value"
-                                                                data-target="66">0</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-lg">
-                                            <div class="mt-3 mt-lg-0 py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Employees <i
-                                                        class="ri-arrow-down-circle-line text-danger fs-18 float-end align-middle"></i>
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="ri-service-line display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0"><span class="counter-value"
-                                                                data-target="90">0</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xl-8">
-                            <div class="card">
-                                <div class="card-header border-0 align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Revenue</h4>
-                                    <div>
-                                        <button type="button" class="btn btn-soft-dark btn-sm">
-                                            ALL
-                                        </button>
-                                        <button type="button" class="btn btn-soft-dark btn-sm">
-                                            1M
-                                        </button>
-                                        <button type="button" class="btn btn-soft-dark btn-sm">
-                                            6M
-                                        </button>
-                                        <button type="button" class="btn btn-soft-primary btn-sm">
-                                            1Y
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- end card header -->
-
-                                <div class="card-header p-0 border-0 bg-light-subtle">
-                                    <div class="row g-0 text-center">
-                                        <div class="col-6 col-sm-3">
-                                            <div class="p-3 border border-dashed border-start-0">
-                                                <h5 class="mb-1">
-                                                    <span class="counter-value" data-target="7585">0</span>
-                                                </h5>
-                                                <p class="text-muted mb-0">Orders</p>
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                                        <div class="col-6 col-sm-3">
-                                            <div class="p-3 border border-dashed border-start-0">
-                                                <h5 class="mb-1">
-                                                    $<span class="counter-value" data-target="22.89">0</span>k
-                                                </h5>
-                                                <p class="text-muted mb-0">Earnings</p>
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                                        <div class="col-6 col-sm-3">
-                                            <div class="p-3 border border-dashed border-start-0">
-                                                <h5 class="mb-1">
-                                                    <span class="counter-value" data-target="367">0</span>
-                                                </h5>
-                                                <p class="text-muted mb-0">Refunds</p>
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                                        <div class="col-6 col-sm-3">
-                                            <div class="p-3 border border-dashed border-start-0 border-end-0">
-                                                <h5 class="mb-1 text-success">
-                                                    <span class="counter-value" data-target="18.92">0</span>%
-                                                </h5>
-                                                <p class="text-muted mb-0">
-                                                    Conversation Ratio
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                                    </div>
-                                </div>
-                                <!-- end card header -->
-
-                                <div class="card-body p-0 pb-2">
-                                    <div class="w-100">
-                                        <div id="customer_impression_charts"
-                                            data-colors='["--vz-success", "--vz-info", "--vz-danger"]' class="apex-charts"
-                                            dir="ltr"></div>
-                                    </div>
-                                </div>
-                                <!-- end card body -->
-                            </div>
-                            <!-- end card -->
-                        </div>
-                        <!-- end col -->
-
-                        <div class="col-xl-4">
-                            <!-- card -->
-                            <div class="card card-height-100">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">
-                                        Sales by Locations
-                                    </h4>
-                                    <div class="flex-shrink-0">
-                                        <button type="button" class="btn btn-soft-primary btn-sm">
-                                            Export Report
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- end card header -->
-
-                                <!-- card body -->
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table  table-hover table-bordered align-middle">
-                                            <thead class="">
-                                                <tr>
-                                                    <th>City Name</th>
-                                                    <th>Properties Count</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="">
-                                                <tr class="">
-                                                    <td>Ajmer</td>
-                                                    <td>27</td>
-                                                </tr>
-                                                <tr class="">
-                                                    <td>Jaipur</td>
-                                                    <td>50</td>
-                                                </tr>
-                                                <tr class="">
-                                                    <td>Ajmer</td>
-                                                    <td>27</td>
-                                                </tr>
-                                                <tr class="">
-                                                    <td>Jaipur</td>
-                                                    <td>50</td>
-                                                </tr>
-                                                <tr class="">
-                                                    <td>Ajmer</td>
-                                                    <td>27</td>
-                                                </tr>
-                                                <tr class="">
-                                                    <td>Jaipur</td>
-                                                    <td>50</td>
-                                                </tr>
-                                                <tr class="">
-                                                    <td>Ajmer</td>
-                                                    <td>27</td>
-                                                </tr>
-                                                <tr class="">
-                                                    <td>Jaipur</td>
-                                                    <td>50</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">
-                                        Best Selling Properties
-                                    </h4>
-                                    <div class="flex-shrink-0">
-                                        <div class="dropdown card-header-dropdown">
-                                            <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <span class="fw-semibold text-uppercase fs-12">Sort by: </span><span
-                                                    class="text-muted">Today<i
-                                                        class="mdi mdi-chevron-down ms-1"></i></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Today</a>
-                                                <a class="dropdown-item" href="#">Yesterday</a>
-                                                <a class="dropdown-item" href="#">Last 7 Days</a>
-                                                <a class="dropdown-item" href="#">Last 30 Days</a>
-                                                <a class="dropdown-item" href="#">This Month</a>
-                                                <a class="dropdown-item" href="#">Last Month</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end card header -->
-
-                                <div class="card-body">
-                                    <div class="table-responsive table-card">
-                                        <table class="table table-hover table-centered align-middle table-nowrap mb-0">
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="avatar-sm bg-light rounded p-1 me-2">
-                                                                <img src="assets/images/products/img-1.png" alt=""
-                                                                    class="img-fluid d-block" />
-                                                            </div>
-                                                            <div>
-                                                                <h5 class="fs-13 my-1">
-                                                                    <a href="apps-ecommerce-product-details.html"
-                                                                        class="text-reset">Branded T-Shirts</a>
-                                                                </h5>
-                                                                <span class="text-muted">24 Apr 2021</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">$29.00</h5>
-                                                        <span class="text-muted">Price</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">62</h5>
-                                                        <span class="text-muted">Orders</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">510</h5>
-                                                        <span class="text-muted">Stock</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">$1,798</h5>
-                                                        <span class="text-muted">Amount</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="avatar-sm bg-light rounded p-1 me-2">
-                                                                <img src="assets/images/products/img-2.png" alt=""
-                                                                    class="img-fluid d-block" />
-                                                            </div>
-                                                            <div>
-                                                                <h5 class="fs-14 my-1">
-                                                                    <a href="apps-ecommerce-product-details.html"
-                                                                        class="text-reset">Bentwood Chair</a>
-                                                                </h5>
-                                                                <span class="text-muted">19 Mar 2021</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-13 my-1 fw-normal">$85.20</h5>
-                                                        <span class="text-muted">Price</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">35</h5>
-                                                        <span class="text-muted">Orders</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">
-                                                            <span class="badge bg-danger-subtle text-danger">Out of
-                                                                stock</span>
-                                                        </h5>
-                                                        <span class="text-muted">Stock</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">$2982</h5>
-                                                        <span class="text-muted">Amount</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="avatar-sm bg-light rounded p-1 me-2">
-                                                                <img src="assets/images/products/img-3.png" alt=""
-                                                                    class="img-fluid d-block" />
-                                                            </div>
-                                                            <div>
-                                                                <h5 class="fs-13 my-1">
-                                                                    <a href="apps-ecommerce-product-details.html"
-                                                                        class="text-reset">Borosil Paper Cup</a>
-                                                                </h5>
-                                                                <span class="text-muted">01 Mar 2021</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">$14.00</h5>
-                                                        <span class="text-muted">Price</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">80</h5>
-                                                        <span class="text-muted">Orders</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">749</h5>
-                                                        <span class="text-muted">Stock</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">$1120</h5>
-                                                        <span class="text-muted">Amount</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="avatar-sm bg-light rounded p-1 me-2">
-                                                                <img src="assets/images/products/img-4.png" alt=""
-                                                                    class="img-fluid d-block" />
-                                                            </div>
-                                                            <div>
-                                                                <h5 class="fs-13 my-1">
-                                                                    <a href="apps-ecommerce-product-details.html"
-                                                                        class="text-reset">One Seater Sofa</a>
-                                                                </h5>
-                                                                <span class="text-muted">11 Feb 2021</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">
-                                                            $127.50
-                                                        </h5>
-                                                        <span class="text-muted">Price</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">56</h5>
-                                                        <span class="text-muted">Orders</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">
-                                                            <span class="badge bg-danger-subtle text-danger">Out of
-                                                                stock</span>
-                                                        </h5>
-                                                        <span class="text-muted">Stock</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">$7140</h5>
-                                                        <span class="text-muted">Amount</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="avatar-sm bg-light rounded p-1 me-2">
-                                                                <img src="assets/images/products/img-5.png" alt=""
-                                                                    class="img-fluid d-block" />
-                                                            </div>
-                                                            <div>
-                                                                <h5 class="fs-13 my-1">
-                                                                    <a href="apps-ecommerce-product-details.html"
-                                                                        class="text-reset">Stillbird Helmet</a>
-                                                                </h5>
-                                                                <span class="text-muted">17 Jan 2021</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">$54</h5>
-                                                        <span class="text-muted">Price</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">74</h5>
-                                                        <span class="text-muted">Orders</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">805</h5>
-                                                        <span class="text-muted">Stock</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 my-1 fw-normal">$3996</h5>
-                                                        <span class="text-muted">Amount</span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                    <div
-                                        class="align-items-center mt-4 pt-2 justify-content-between row text-center text-sm-start">
-                                        <div class="col-sm">
-                                            <div class="text-muted">
-                                                Showing <span class="fw-semibold">5</span> of
-                                                <span class="fw-semibold">25</span> Results
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-auto mt-3 mt-sm-0">
-                                            <ul
-                                                class="pagination pagination-separated pagination-sm mb-0 justify-content-center">
-                                                <li class="page-item disabled">
-                                                    <a href="#" class="page-link">←</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">1</a>
-                                                </li>
-                                                <li class="page-item active">
-                                                    <a href="#" class="page-link">2</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">3</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">→</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-6">
-                            <div class="card card-height-100">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">
-                                        Today's Enquiries
-                                    </h4>
-                                    <div class="flex-shrink-0">
-                                        <div class="dropdown card-header-dropdown">
-                                            <div class="flex-shrink-0">
-                                                <button type="button" class="btn btn-soft-primary btn-sm">
-                                                    Export Excel
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end card header -->
-
-                                <div class="card-body">
-                                    <table class="table table-striped table-hover table-bordered table-responsive-sm">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Role</th>
-                                                <th scope="col">Subject</th>
-                                                <th scope="col">Created_at</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th>Noizy</th>
-                                                <td>Admin</td>
-                                                <td>For Commercial land</td>
-                                                <td>3rd April 2024</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Noizy</th>
-                                                <td>Admin</td>
-                                                <td>For Commercial land</td>
-                                                <td>3rd April 2024</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Noizy</th>
-                                                <td>Admin</td>
-                                                <td>For Commercial land</td>
-                                                <td>3rd April 2024</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Noizy</th>
-                                                <td>Admin</td>
-                                                <td>For Commercial land</td>
-                                                <td>3rd April 2024</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Noizy</th>
-                                                <td>Admin</td>
-                                                <td>For Commercial land</td>
-                                                <td>3rd April 2024</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Noizy</th>
-                                                <td>Admin</td>
-                                                <td>For Commercial land</td>
-                                                <td>3rd April 2024</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                    <div
-                                        class="align-items-center mt-4 pt-2 justify-content-between row text-center text-sm-start">
-                                        <div class="col-sm">
-                                            <div class="text-muted">
-                                                Showing <span class="fw-semibold">6</span> of
-                                                <span class="fw-semibold">25</span> Results
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-auto mt-3 mt-sm-0">
-                                            <ul
-                                                class="pagination pagination-separated pagination-sm mb-0 justify-content-center">
-                                                <li class="page-item disabled">
-                                                    <a href="#" class="page-link">←</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">1</a>
-                                                </li>
-                                                <li class="page-item active">
-                                                    <a href="#" class="page-link">2</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">3</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">→</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- .card-body-->
-                            </div>
-                            <!-- .card-->
-                        </div>
-                        <!-- .col-->
-                    </div>
-                    <!-- end row-->
-
-                    <div class="row">
-                        <div class="col-xl-4">
-                            <div class="card card-height-100">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">
-                                        Highlights
-                                    </h4>
-                                    {{-- <div class="flex-shrink-0">
-                                        <div class="dropdown card-header-dropdown">
-                                            <a class="text-reset dropdown-btn" href="#"
-                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="text-muted">Report<i
-                                                        class="mdi mdi-chevron-down ms-1"></i></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Download Report</a>
-                                                <a class="dropdown-item" href="#">Export</a>
-                                                <a class="dropdown-item" href="#">Import</a>
-                                            </div>
-                                        </div>
-                                    </div> --}}
-                                </div>
-                                <!-- end card header -->
-
-                                <div class="card-body">
-                                    <div id="store-visits-source"
-                                        data-colors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-info"]'
-                                        class="apex-charts" dir="ltr"></div>
-                                </div>
-                            </div>
-                            <!-- .card-->
-                        </div>
-                        <!-- .col-->
-
-                        <div class="col-xl-8">
-                            <div class="card">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">
-                                        Recent Orders
-                                    </h4>
-                                    <div class="flex-shrink-0">
-                                        <button type="button" class="btn btn-soft-info btn-sm">
-                                            <i class="ri-file-list-3-line align-middle"></i>
-                                            Generate Report
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- end card header -->
-
-                                <div class="card-body">
-                                    <div class="table-responsive table-card">
-                                        <table
-                                            class="table table-borderless table-centered align-middle table-nowrap mb-0">
-                                            <thead class="text-muted table-light">
-                                                <tr>
-                                                    <th scope="col">Order ID</th>
-                                                    <th scope="col">Customer</th>
-                                                    <th scope="col">Product</th>
-                                                    <th scope="col">Amount</th>
-                                                    <th scope="col">Vendor</th>
-                                                    <th scope="col">Status</th>
-                                                    <th scope="col">Rating</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <a href="apps-ecommerce-order-details.html"
-                                                            class="fw-medium link-primary">#VZ2112</a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 me-2">
-                                                                <img src="assets/images/users/avatar-1.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle" />
-                                                            </div>
-                                                            <div class="flex-grow-1">Alex Smith</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>Clothes</td>
-                                                    <td>
-                                                        <span class="text-success">$109.00</span>
-                                                    </td>
-                                                    <td>Zoetic Fashion</td>
-                                                    <td>
-                                                        <span class="badge bg-success-subtle text-success">Paid</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 fw-medium mb-0">
-                                                            5.0<span class="text-muted fs-11 ms-1">(61 votes)</span>
-                                                        </h5>
-                                                    </td>
-                                                </tr>
-                                                <!-- end tr -->
-                                                <tr>
-                                                    <td>
-                                                        <a href="apps-ecommerce-order-details.html"
-                                                            class="fw-medium link-primary">#VZ2111</a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 me-2">
-                                                                <img src="assets/images/users/avatar-2.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle" />
-                                                            </div>
-                                                            <div class="flex-grow-1">Jansh Brown</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>Kitchen Storage</td>
-                                                    <td>
-                                                        <span class="text-success">$149.00</span>
-                                                    </td>
-                                                    <td>Micro Design</td>
-                                                    <td>
-                                                        <span class="badge bg-warning-subtle text-warning">Pending</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 fw-medium mb-0">
-                                                            4.5<span class="text-muted fs-11 ms-1">(61 votes)</span>
-                                                        </h5>
-                                                    </td>
-                                                </tr>
-                                                <!-- end tr -->
-                                                <tr>
-                                                    <td>
-                                                        <a href="apps-ecommerce-order-details.html"
-                                                            class="fw-medium link-primary">#VZ2109</a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 me-2">
-                                                                <img src="assets/images/users/avatar-3.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle" />
-                                                            </div>
-                                                            <div class="flex-grow-1">Ayaan Bowen</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>Bike Accessories</td>
-                                                    <td>
-                                                        <span class="text-success">$215.00</span>
-                                                    </td>
-                                                    <td>Nesta Technologies</td>
-                                                    <td>
-                                                        <span class="badge bg-success-subtle text-success">Paid</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 fw-medium mb-0">
-                                                            4.9<span class="text-muted fs-11 ms-1">(89 votes)</span>
-                                                        </h5>
-                                                    </td>
-                                                </tr>
-                                                <!-- end tr -->
-                                                <tr>
-                                                    <td>
-                                                        <a href="apps-ecommerce-order-details.html"
-                                                            class="fw-medium link-primary">#VZ2108</a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 me-2">
-                                                                <img src="assets/images/users/avatar-4.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle" />
-                                                            </div>
-                                                            <div class="flex-grow-1">Prezy Mark</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>Furniture</td>
-                                                    <td>
-                                                        <span class="text-success">$199.00</span>
-                                                    </td>
-                                                    <td>Syntyce Solutions</td>
-                                                    <td>
-                                                        <span class="badge bg-danger-subtle text-danger">Unpaid</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 fw-medium mb-0">
-                                                            4.3<span class="text-muted fs-11 ms-1">(47 votes)</span>
-                                                        </h5>
-                                                    </td>
-                                                </tr>
-                                                <!-- end tr -->
-                                                <tr>
-                                                    <td>
-                                                        <a href="apps-ecommerce-order-details.html"
-                                                            class="fw-medium link-primary">#VZ2107</a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 me-2">
-                                                                <img src="assets/images/users/avatar-6.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle" />
-                                                            </div>
-                                                            <div class="flex-grow-1">Vihan Hudda</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>Bags and Wallets</td>
-                                                    <td>
-                                                        <span class="text-success">$330.00</span>
-                                                    </td>
-                                                    <td>iTest Factory</td>
-                                                    <td>
-                                                        <span class="badge bg-success-subtle text-success">Paid</span>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="fs-14 fw-medium mb-0">
-                                                            4.7<span class="text-muted fs-11 ms-1">(161 votes)</span>
-                                                        </h5>
-                                                    </td>
-                                                </tr>
-                                                <!-- end tr -->
-                                            </tbody>
-                                            <!-- end tbody -->
-                                        </table>
-                                        <!-- end table -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- .card-->
-                        </div>
-                        <!-- .col-->
-                    </div>
-                    <!-- end row-->
-                </div>
-                <!-- end .h-100-->
-            </div>
-            <!-- end col -->
-
-            <div class="col-auto layout-rightside-col">
-                <div class="overlay"></div>
-                <div class="layout-rightside">
-                    <div class="card h-100 rounded-0">
-                        <div class="card-body p-0">
-                            <div class="p-3">
-                                <h6 class="text-muted mb-0 text-uppercase">
-                                    Recent Enquiries
-                                </h6>
-                            </div>
-                            <div data-simplebar style="max-height: 410px" class="p-3 pt-0">
-                                <div class="acitivity-timeline acitivity-main">
-                                    <div class="acitivity-item d-flex">
-                                        <div class="flex-shrink-0 avatar-xs acitivity-avatar">
-                                            <div class="avatar-title bg-success-subtle text-success rounded-circle">
-                                                <i class="ri-shopping-cart-2-line"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1 lh-base">
-                                                Enquiry by Anshul
-                                            </h6>
-                                            <p class="text-muted mb-1">
-                                                Villas
-                                            </p>
-                                            <small class="mb-0 text-muted">02:14 PM Today</small>
-                                        </div>
-                                    </div>
-                                    {{-- <div class="acitivity-item py-3 d-flex">
-                                        <div class="flex-shrink-0 avatar-xs acitivity-avatar">
-                                            <div class="avatar-title bg-danger-subtle text-danger rounded-circle">
-                                                <i class="ri-stack-fill"></i>
-                                            </div>
-                                        </div>
-                                    </div> --}}
-                                    <div class="acitivity-item py-3 d-flex">
-                                        <div class="flex-shrink-0">
-                                            <img src="assets/images/users/avatar-2.jpg" alt=""
-                                                class="avatar-xs rounded-circle acitivity-avatar" />
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1 lh-base">
-                                                Enquiry by Anshul
-                                            </h6>
-                                            <p class="text-muted mb-1">
-                                                Villas
-                                            </p>
-                                            <small class="mb-0 text-muted">02:14 PM Today</small>
-                                        </div>
-                                    </div>
-                                    <div class="acitivity-item py-3 d-flex">
-                                        <div class="flex-shrink-0">
-                                            <div class="avatar-xs acitivity-avatar">
-                                                <div class="avatar-title rounded-circle bg-secondary">
-                                                    <i class="mdi mdi-sale fs-14"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1 lh-base">
-                                                Enquiry by Anshul
-                                            </h6>
-                                            <p class="text-muted mb-1">
-                                                Villas
-                                            </p>
-                                            <small class="mb-0 text-muted">02:14 PM Today</small>
-                                        </div>
-                                    </div>
-                                    <div class="acitivity-item py-3 d-flex">
-                                        <div class="flex-shrink-0">
-                                            <div class="avatar-xs acitivity-avatar">
-                                                <div class="avatar-title rounded-circle bg-danger-subtle text-danger">
-                                                    <i class="ri-bookmark-fill"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1 lh-base">
-                                                Enquiry by Anshul
-                                            </h6>
-                                            <p class="text-muted mb-1">
-                                                Villas
-                                            </p>
-                                            <small class="mb-0 text-muted">02:14 PM Today</small>
-                                        </div>
-                                    </div>
-                                    <div class="acitivity-item py-3 d-flex">
-                                        <div class="flex-shrink-0">
-                                            <div class="avatar-xs acitivity-avatar">
-                                                <div class="avatar-title rounded-circle bg-secondary">
-                                                    <i class="mdi mdi-sale fs-14"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1 lh-base">
-                                                Enquiry by Anshul
-                                            </h6>
-                                            <p class="text-muted mb-1">
-                                                Villas
-                                            </p>
-                                            <small class="mb-0 text-muted">02:14 PM Today</small>
-                                        </div>
-                                    </div>
-                                    <div class="acitivity-item py-3 d-flex">
-                                        <div class="flex-shrink-0">
-                                            <div class="avatar-xs acitivity-avatar">
-                                                <div class="avatar-title rounded-circle bg-info-subtle text-info">
-                                                    <i class="ri-line-chart-line"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1 lh-base">
-                                                Enquiry by Anshul
-                                            </h6>
-                                            <p class="text-muted mb-1">
-                                                Villas
-                                            </p>
-                                            <small class="mb-0 text-muted">02:14 PM Today</small>
-                                        </div>
-                                    </div>
-                                    <div class="acitivity-item d-flex">
-                                        <div class="flex-shrink-0">
-                                            <img src="assets/images/users/avatar-3.jpg" alt=""
-                                                class="avatar-xs rounded-circle acitivity-avatar" />
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h6 class="mb-1 lh-base">
-                                                Enquiry by Anshul
-                                            </h6>
-                                            <p class="text-muted mb-1">
-                                                Villas
-                                            </p>
-                                            <small class="mb-0 text-muted">02:14 PM Today</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="p-3 mt-2">
-                                <h6 class="text-muted mb-3 text-uppercase">
-                                    Top Categories
-                                </h6>
-
-                                <ol class="ps-3 text-muted">
-                                    <li class="py-1">
-                                        <a href="#" class="text-muted">Cottages <span
-                                                class="float-end">(10)</span></a>
-                                    </li>
-                                    <li class="py-1">
-                                        <a href="#" class="text-muted">Plots <span
-                                                class="float-end">(12)</span></a>
-                                    </li>
-                                    <li class="py-1">
-                                        <a href="#" class="text-muted">Bungalows <span
-                                                class="float-end">(16)</span></a>
-                                    </li>
-                                    <li class="py-1">
-                                        <a href="#" class="text-muted">Warehouses <span
-                                                class="float-end">(6)</span></a>
-                                    </li>
-                                    <li class="py-1">
-                                        <a href="#" class="text-muted">Villa <span
-                                                class="float-end">(56)</span></a>
-                                    </li>
-                                    <li class="py-1">
-                                        <a href="#" class="text-muted">Building <span
-                                                class="float-end">(77)</span></a>
-                                    </li>
-                                    <li class="py-1">
-                                        <a href="#" class="text-muted">Commercial <span
-                                                class="float-end">(1)</span></a>
-                                    </li>
-                                    <li class="py-1">
-                                        <a href="#" class="text-muted">Residential projects <span
-                                                class="float-end">(88)</span></a>
-                                    </li>
-                                    <li class="py-1">
-                                        <a href="#" class="text-muted">Industrial <span
-                                                class="float-end">(100)</span></a>
-                                    </li>
-                                </ol>
-                            </div>
-                            <div class="p-3">
-                                <h6 class="text-muted mb-3 text-uppercase">
-                                    Products Reviews
-                                </h6>
-                                <!-- Swiper -->
-                                <div class="swiper vertical-swiper" style="height: 250px">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="card border border-dashed shadow-none">
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class="flex-shrink-0 avatar-sm">
-                                                            <div class="avatar-title bg-light rounded">
-                                                                <img src="assets/images/companies/img-1.png"
-                                                                    alt="" height="30" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <div>
-                                                                <p
-                                                                    class="text-muted mb-1 fst-italic text-truncate-two-lines">
-                                                                    " Great product and looks great, lots
-                                                                    of features. "
-                                                                </p>
-                                                                <div class="fs-11 align-middle text-warning">
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-fill"></i>
-                                                                </div>
-                                                            </div>
-                                                            <div class="text-end mb-0 text-muted">
-                                                                - by
-                                                                <cite title="Source Title">Force Medicines</cite>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="card border border-dashed shadow-none">
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class="flex-shrink-0">
-                                                            <img src="assets/images/users/avatar-3.jpg" alt=""
-                                                                class="avatar-sm rounded" />
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <div>
-                                                                <p
-                                                                    class="text-muted mb-1 fst-italic text-truncate-two-lines">
-                                                                    " Amazing template, very easy to
-                                                                    understand and manipulate. "
-                                                                </p>
-                                                                <div class="fs-11 align-middle text-warning">
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-half-fill"></i>
-                                                                </div>
-                                                            </div>
-                                                            <div class="text-end mb-0 text-muted">
-                                                                - by
-                                                                <cite title="Source Title">Henry Baird</cite>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="card border border-dashed shadow-none">
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class="flex-shrink-0 avatar-sm">
-                                                            <div class="avatar-title bg-light rounded">
-                                                                <img src="assets/images/companies/img-8.png"
-                                                                    alt="" height="30" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <div>
-                                                                <p
-                                                                    class="text-muted mb-1 fst-italic text-truncate-two-lines">
-                                                                    "Very beautiful product and Very
-                                                                    helpful customer service."
-                                                                </p>
-                                                                <div class="fs-11 align-middle text-warning">
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-line"></i>
-                                                                    <i class="ri-star-line"></i>
-                                                                </div>
-                                                            </div>
-                                                            <div class="text-end mb-0 text-muted">
-                                                                - by
-                                                                <cite title="Source Title">Zoetic Fashion</cite>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="card border border-dashed shadow-none">
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class="flex-shrink-0">
-                                                            <img src="assets/images/users/avatar-2.jpg" alt=""
-                                                                class="avatar-sm rounded" />
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <div>
-                                                                <p
-                                                                    class="text-muted mb-1 fst-italic text-truncate-two-lines">
-                                                                    " The product is very beautiful. I
-                                                                    like it. "
-                                                                </p>
-                                                                <div class="fs-11 align-middle text-warning">
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-fill"></i>
-                                                                    <i class="ri-star-half-fill"></i>
-                                                                    <i class="ri-star-line"></i>
-                                                                </div>
-                                                            </div>
-                                                            <div class="text-end mb-0 text-muted">
-                                                                - by
-                                                                <cite title="Source Title">Nancy Martino</cite>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="p-3">
-                                <h6 class="text-muted mb-3 text-uppercase">
-                                    Customer Reviews
-                                </h6>
-                                <div class="bg-light px-3 py-2 rounded-2 mb-2">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <div class="fs-16 align-middle text-warning">
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="flex-shrink-0">
-                                            <h6 class="mb-0">4.5 out of 5</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="text-muted">
-                                        Total <span class="fw-medium">5.50k</span> reviews
-                                    </div>
-                                </div>
-
-                                <div class="mt-3">
-                                    <div class="row align-items-center g-2">
-                                        <div class="col-auto">
-                                            <div class="p-1">
-                                                <h6 class="mb-0">5 star</h6>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="p-1">
-                                                <div class="progress animated-progress progress-sm">
-                                                    <div class="progress-bar bg-success" role="progressbar"
-                                                        style="width: 50.16%" aria-valuenow="50.16" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="p-1">
-                                                <h6 class="mb-0 text-muted">2758</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end row -->
-
-                                    <div class="row align-items-center g-2">
-                                        <div class="col-auto">
-                                            <div class="p-1">
-                                                <h6 class="mb-0">4 star</h6>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="p-1">
-                                                <div class="progress animated-progress progress-sm">
-                                                    <div class="progress-bar bg-success" role="progressbar"
-                                                        style="width: 29.32%" aria-valuenow="29.32" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="p-1">
-                                                <h6 class="mb-0 text-muted">1063</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end row -->
-
-                                    <div class="row align-items-center g-2">
-                                        <div class="col-auto">
-                                            <div class="p-1">
-                                                <h6 class="mb-0">3 star</h6>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="p-1">
-                                                <div class="progress animated-progress progress-sm">
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                        style="width: 18.12%" aria-valuenow="18.12" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="p-1">
-                                                <h6 class="mb-0 text-muted">997</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end row -->
-
-                                    <div class="row align-items-center g-2">
-                                        <div class="col-auto">
-                                            <div class="p-1">
-                                                <h6 class="mb-0">2 star</h6>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="p-1">
-                                                <div class="progress animated-progress progress-sm">
-                                                    <div class="progress-bar bg-success" role="progressbar"
-                                                        style="width: 4.98%" aria-valuenow="4.98" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-auto">
-                                            <div class="p-1">
-                                                <h6 class="mb-0 text-muted">227</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end row -->
-
-                                    <div class="row align-items-center g-2">
-                                        <div class="col-auto">
-                                            <div class="p-1">
-                                                <h6 class="mb-0">1 star</h6>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="p-1">
-                                                <div class="progress animated-progress progress-sm">
-                                                    <div class="progress-bar bg-danger" role="progressbar"
-                                                        style="width: 7.42%" aria-valuenow="7.42" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="p-1">
-                                                <h6 class="mb-0 text-muted">408</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end row -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end card-->
-                </div>
-                <!-- end .rightbar-->
-            </div>
-            <!-- end col -->
+<div class="container-fluid">
+    <div class="profile-foreground position-relative mx-n4 mt-n4">
+        <div class="profile-wid-bg">
+            <img src="assets/images/profile-bg.jpg" alt="" class="profile-wid-img" />
         </div>
     </div>
+    <div class="pt-4 mb-4 mb-lg-3 pb-lg-4 profile-wrapper">
+        <div class="row g-4">
+            <div class="col-auto">
+                <div class="avatar-lg">
+                    <img src="{{asset('assets/images/user-dummy-img.jpg')}}" alt="user-img"
+                        class="img-thumbnail rounded-circle" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-2">
+                    <h3 class="text-white mb-1">{{$teamdata->teamname}}</h3>
+                    <p class="text-white text-opacity-75">{{$teamdata->teamid}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div>
+                <div class="d-flex profile-wrapper">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-pills animation-nav profile-nav gap-2 gap-lg-3 flex-grow-1" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link fs-14 active" data-bs-toggle="tab" href="#overview-tab" role="tab">
+                                <i class="ri-airplay-fill d-inline-block d-md-none"></i> <span
+                                    class="d-none d-md-inline-block">Overview</span>
+                            </a>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a class="nav-link fs-14" data-bs-toggle="tab" href="#activities" role="tab">
+                                <i class="ri-list-unordered d-inline-block d-md-none"></i> <span
+                                    class="d-none d-md-inline-block">Activities</span>
+                            </a>
+                        </li> --}}
+                        <li class="nav-item">
+                            <a class="nav-link fs-14" data-bs-toggle="tab" href="#projects" role="tab">
+                                <i class="ri-price-tag-line d-inline-block d-md-none"></i> <span
+                                    class="d-none d-md-inline-block">Team Members</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-14" data-bs-toggle="tab" href="#documents" role="tab">
+                                <i class="ri-folder-4-line d-inline-block d-md-none"></i> <span
+                                    class="d-none d-md-inline-block">Documents</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="flex-shrink-0">
+                        <a href="pages-profile-settings.html" class="btn btn-success"><i
+                                class="ri-edit-box-line align-bottom"></i> Edit Profile</a>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content pt-4 text-muted">
+                    <div class="tab-pane active" id="overview-tab" role="tabpanel">
+                        <div class="row">
+                            <div class="col-xxl-3">
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-3">Info</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless mb-0">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="ps-0" scope="row">Team Name :</th>
+                                                        <td class="text-muted">{{$teamdata->teamname}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="ps-0" scope="row">Mobile :</th>
+                                                        <td class="text-muted">{{$teamdata->mobilenumber}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="ps-0" scope="row">E-mail :</th>
+                                                        <td class="text-muted">{{$teamdata->email}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="ps-0" scope="row">Joining Date</th>
+                                                        <td class="text-muted">
+                                                            {{$teamdata->created_at->format('d/m/y')}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-4">Portfolio</h5>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <div>
+                                                <a href="javascript:void(0);" class="avatar-xs d-block">
+                                                    <span class="avatar-title rounded-circle fs-16 bg-dark text-light">
+                                                        <i class="ri-github-fill"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);" class="avatar-xs d-block">
+                                                    <span class="avatar-title rounded-circle fs-16 bg-primary">
+                                                        <i class="ri-global-fill"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);" class="avatar-xs d-block">
+                                                    <span class="avatar-title rounded-circle fs-16 bg-success">
+                                                        <i class="ri-dribbble-fill"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);" class="avatar-xs d-block">
+                                                    <span class="avatar-title rounded-circle fs-16 bg-danger">
+                                                        <i class="ri-pinterest-fill"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-4">Skills</h5>
+                                        <div class="d-flex flex-wrap gap-2 fs-15">
+                                            <a href="javascript:void(0);"
+                                                class="badge bg-primary-subtle text-primary">Photoshop</a>
+                                            <a href="javascript:void(0);"
+                                                class="badge bg-primary-subtle text-primary">illustrator</a>
+                                            <a href="javascript:void(0);"
+                                                class="badge bg-primary-subtle text-primary">HTML</a>
+                                            <a href="javascript:void(0);"
+                                                class="badge bg-primary-subtle text-primary">CSS</a>
+                                            <a href="javascript:void(0);"
+                                                class="badge bg-primary-subtle text-primary">Javascript</a>
+                                            <a href="javascript:void(0);"
+                                                class="badge bg-primary-subtle text-primary">Php</a>
+                                            <a href="javascript:void(0);"
+                                                class="badge bg-primary-subtle text-primary">Python</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-9">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="mt-3">
+                                                    <label for="emailInput" class="form-label fw-bold">Team Name</label>
+                                                    <input type="text"
+                                                        class="text-muted form-control text-muted border border-0 bg-transparent border border-0 bg-transparent"
+                                                        id="emailInput" readonly value="{{$teamdata->teamname}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="mt-3">
+                                                    <label for="passwordInput" class="form-label fw-bold">Team
+                                                        ID</label>
+                                                    <input type="text"
+                                                        class="form-control text-muted border border-0 bg-transparent"
+                                                        id="passwordInput" readonly value="{{$teamdata->teamid}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="mt-3">
+                                                    <label for="passwordInput" class="form-label fw-bold">Captain
+                                                        Name</label>
+                                                    <input type="text"
+                                                        class="form-control text-muted border border-0 bg-transparent"
+                                                        id="passwordInput" readonly value="{{$teamdata->captainname}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="mt-3">
+                                                    <label for="passwordInput" class="form-label fw-bold">Email</label>
+                                                    <input type="text"
+                                                        class="form-control text-muted border border-0 bg-transparent"
+                                                        id="passwordInput" readonly value="{{$teamdata->email}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="mt-3">
+                                                    <label for="passwordInput" class="form-label fw-bold">Coach
+                                                        Name</label>
+                                                    <input type="text"
+                                                        class="form-control text-muted border border-0 bg-transparent"
+                                                        id="passwordInput" readonly value="{{$teamdata->coachname}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="mt-3">
+                                                    <label for="passwordInput" class="form-label fw-bold">Institue
+                                                        Recognized By</label>
+                                                    <input type="text"
+                                                        class="form-control text-muted border border-0 bg-transparent"
+                                                        id="passwordInput" readonly
+                                                        value="{{$teamdata->instituterecognizedby}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="mt-3">
+                                                    <label for="passwordInput" class="form-label fw-bold">Institution
+                                                        Name</label>
+                                                    <input type="text"
+                                                        class="form-control text-muted border border-0 bg-transparent"
+                                                        id="passwordInput" readonly
+                                                        value="{{$teamdata->institutionname}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="mt-3">
+                                                    <label for="passwordInput" class="form-label fw-bold">Communication
+                                                        Address</label>
+                                                    <input type="text"
+                                                        class="form-control text-muted border border-0 bg-transparent"
+                                                        id="passwordInput" readonly
+                                                        value="{{$teamdata->communicationaddress}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 col-md-4">
+                                                <div class="d-flex mt-4">
+                                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
+                                                        <div
+                                                            class="avatar-title bg-light rounded-circle fs-16 text-primary">
+                                                            <i class="ri-global-line"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1 overflow-hidden">
+                                                        <p class="mb-1">Website :</p>
+                                                        <a href="https://autosports.cigmafeed.in/"
+                                                            class="fw-semibold">Auto Sports</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Projects</h5>
+                                        <!-- Swiper -->
+                                        <div class="swiper project-swiper mt-n4">
+                                            <div class="d-flex justify-content-end gap-2 mb-2">
+                                                <div class="slider-button-prev">
+                                                    <div class="avatar-title fs-18 rounded px-1">
+                                                        <i class="ri-arrow-left-s-line"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="slider-button-next">
+                                                    <div class="avatar-title fs-18 rounded px-1">
+                                                        <i class="ri-arrow-right-s-line"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="card profile-project-card shadow-none profile-project-success mb-0">
+                                                        <div class="card-body p-4">
+                                                            <div class="d-flex">
+                                                                <div class="flex-grow-1 text-muted overflow-hidden">
+                                                                    <h5 class="fs-14 text-truncate mb-1">
+                                                                        <a href="#" class="text-body">ABC
+                                                                            Project Customization</a>
+                                                                    </h5>
+                                                                    <p class="text-muted text-truncate mb-0">
+                                                                        Last Update : <span
+                                                                            class="fw-semibold text-body">4
+                                                                            hr Ago</span></p>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <div
+                                                                        class="badge bg-warning-subtle text-warning fs-10">
+                                                                        Inprogress</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex mt-4">
+                                                                <div class="flex-grow-1">
+                                                                    <div class="d-flex align-items-center gap-2">
+                                                                        <div>
+                                                                            <h5 class="fs-12 text-muted mb-0">
+                                                                                Members :</h5>
+                                                                        </div>
+                                                                        <div class="avatar-group">
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <img src="assets/images/users/avatar-4.jpg"
+                                                                                        alt=""
+                                                                                        class="rounded-circle img-fluid" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <img src="assets/images/users/avatar-5.jpg"
+                                                                                        alt=""
+                                                                                        class="rounded-circle img-fluid" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <div
+                                                                                        class="avatar-title rounded-circle bg-light text-primary">
+                                                                                        A
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <img src="assets/images/users/avatar-2.jpg"
+                                                                                        alt=""
+                                                                                        class="rounded-circle img-fluid" />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end card body -->
+                                                    </div>
+                                                    <!-- end card -->
+                                                </div>
+                                                <!-- end slide item -->
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="card profile-project-card shadow-none profile-project-danger mb-0">
+                                                        <div class="card-body p-4">
+                                                            <div class="d-flex">
+                                                                <div class="flex-grow-1 text-muted overflow-hidden">
+                                                                    <h5 class="fs-14 text-truncate mb-1">
+                                                                        <a href="#" class="text-body">Client -
+                                                                            John</a>
+                                                                    </h5>
+                                                                    <p class="text-muted text-truncate mb-0">
+                                                                        Last Update : <span
+                                                                            class="fw-semibold text-body">1
+                                                                            hr Ago</span></p>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <div
+                                                                        class="badge bg-success-subtle text-success fs-10">
+                                                                        Completed</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex mt-4">
+                                                                <div class="flex-grow-1">
+                                                                    <div class="d-flex align-items-center gap-2">
+                                                                        <div>
+                                                                            <h5 class="fs-12 text-muted mb-0">
+                                                                                Members :</h5>
+                                                                        </div>
+                                                                        <div class="avatar-group">
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <img src="assets/images/users/avatar-2.jpg"
+                                                                                        alt=""
+                                                                                        class="rounded-circle img-fluid" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <div
+                                                                                        class="avatar-title rounded-circle bg-light text-primary">
+                                                                                        C
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- end card body -->
+                                                    </div><!-- end card -->
+                                                </div><!-- end slide item -->
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="card profile-project-card shadow-none profile-project-info mb-0">
+                                                        <div class="card-body p-4">
+                                                            <div class="d-flex">
+                                                                <div class="flex-grow-1 text-muted overflow-hidden">
+                                                                    <h5 class="fs-14 text-truncate mb-1">
+                                                                        <a href="#" class="text-body">Brand logo
+                                                                            Design</a>
+                                                                    </h5>
+                                                                    <p class="text-muted text-truncate mb-0">
+                                                                        Last Update : <span
+                                                                            class="fw-semibold text-body">2
+                                                                            hr Ago</span></p>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <div
+                                                                        class="badge bg-warning-subtle text-warning fs-10">
+                                                                        Inprogress</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex mt-4">
+                                                                <div class="flex-grow-1">
+                                                                    <div class="d-flex align-items-center gap-2">
+                                                                        <div>
+                                                                            <h5 class="fs-12 text-muted mb-0">
+                                                                                Members :</h5>
+                                                                        </div>
+                                                                        <div class="avatar-group">
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <img src="assets/images/users/avatar-5.jpg"
+                                                                                        alt=""
+                                                                                        class="rounded-circle img-fluid" />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- end card body -->
+                                                    </div><!-- end card -->
+                                                </div><!-- end slide item -->
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="card profile-project-card shadow-none profile-project-danger mb-0">
+                                                        <div class="card-body p-4">
+                                                            <div class="d-flex">
+                                                                <div class="flex-grow-1 text-muted overflow-hidden">
+                                                                    <h5 class="fs-14 text-truncate mb-1">
+                                                                        <a href="#" class="text-body">Project
+                                                                            update</a>
+                                                                    </h5>
+                                                                    <p class="text-muted text-truncate mb-0">
+                                                                        Last Update : <span
+                                                                            class="fw-semibold text-body">4
+                                                                            hr Ago</span></p>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <div
+                                                                        class="badge bg-success-subtle text-success fs-10">
+                                                                        Completed</div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="d-flex mt-4">
+                                                                <div class="flex-grow-1">
+                                                                    <div class="d-flex align-items-center gap-2">
+                                                                        <div>
+                                                                            <h5 class="fs-12 text-muted mb-0">
+                                                                                Members :</h5>
+                                                                        </div>
+                                                                        <div class="avatar-group">
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <img src="assets/images/users/avatar-4.jpg"
+                                                                                        alt=""
+                                                                                        class="rounded-circle img-fluid" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <img src="assets/images/users/avatar-5.jpg"
+                                                                                        alt=""
+                                                                                        class="rounded-circle img-fluid" />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end card body -->
+                                                    </div>
+                                                    <!-- end card -->
+                                                </div>
+                                                <!-- end slide item -->
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="card profile-project-card shadow-none profile-project-warning mb-0">
+                                                        <div class="card-body p-4">
+                                                            <div class="d-flex">
+                                                                <div class="flex-grow-1 text-muted overflow-hidden">
+                                                                    <h5 class="fs-14 text-truncate mb-1">
+                                                                        <a href="#" class="text-body">Chat
+                                                                            App</a>
+                                                                    </h5>
+                                                                    <p class="text-muted text-truncate mb-0">
+                                                                        Last Update : <span
+                                                                            class="fw-semibold text-body">1
+                                                                            hr Ago</span></p>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <div
+                                                                        class="badge bg-warning-subtle text-warning fs-10">
+                                                                        Inprogress</div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="d-flex mt-4">
+                                                                <div class="flex-grow-1">
+                                                                    <div class="d-flex align-items-center gap-2">
+                                                                        <div>
+                                                                            <h5 class="fs-12 text-muted mb-0">
+                                                                                Members :</h5>
+                                                                        </div>
+                                                                        <div class="avatar-group">
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <img src="assets/images/users/avatar-4.jpg"
+                                                                                        alt=""
+                                                                                        class="rounded-circle img-fluid" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <img src="assets/images/users/avatar-5.jpg"
+                                                                                        alt=""
+                                                                                        class="rounded-circle img-fluid" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="avatar-group-item">
+                                                                                <div class="avatar-xs">
+                                                                                    <div
+                                                                                        class="avatar-title rounded-circle bg-light text-primary">
+                                                                                        A
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end card body -->
+                                                    </div>
+                                                    <!-- end card -->
+                                                </div>
+                                                <!-- end slide item -->
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <!-- end card body -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="projects" role="tabpanel">
+                        <div class="">
+                            <div class="card-body">
+                                <div class="row row-cols-xxl-5 row-cols-lg-3 row-cols-1">
+                                    @foreach ($teammembers as $index => $row)
+                                    <div class="col">
+                                        <div class="card card-body">
+                                            <div class="d-flex mb-4 align-items-center">
+                                                <div class="flex-shrink-0">
+                                                    <img src="{{ asset('uploads/' . $row->memberphoto) }}" alt=""
+                                                        class="avatar-sm rounded-circle" />
+                                                </div>
+                                                <div class="flex-grow-1 ms-2">
+                                                    <h5 class="card-title mb-1">{{ $row->member }}</h5>
+                                                    <p class="text-muted mb-0">{{ $row->emailaddress }}</p>
+                                                </div>
+                                            </div>
+                                            <h6 class="mb-1">MEM{{ $row->id }}</h6>
+                                            <p class="card-text text-muted">{{ $row->role }}</p>
+                                            <a href="javascript:void(0)" class="btn btn-primary btn-sm openModalBtn"
+                                                data-record-id="{{ json_encode($row) }}" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModalgrid">See Details</a>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end tab-pane-->
+                    <div class="tab-pane fade" id="documents" role="tabpanel">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h5 class="card-title flex-grow-1 mb-0">Documents</h5>
+                                    <div class="flex-shrink-0">
+                                        <input class="form-control d-none" type="file" id="formFile">
+                                        <label for="formFile" class="btn btn-danger"><i
+                                                class="ri-upload-2-fill me-1 align-bottom"></i> Upload
+                                            File</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless align-middle mb-0">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th scope="col">File Name</th>
+                                                        <th scope="col">Type</th>
+                                                        <th scope="col">Size</th>
+                                                        <th scope="col">Upload Date</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="avatar-sm">
+                                                                    <div
+                                                                        class="avatar-title bg-primary-subtle text-primary rounded fs-20">
+                                                                        <i class="ri-file-zip-fill"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ms-3 flex-grow-1">
+                                                                    <h6 class="fs-14 mb-0"><a href="javascript:void(0)"
+                                                                            class="text-body">Artboard-documents.zip</a>
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>Zip File</td>
+                                                        <td>4.57 MB</td>
+                                                        <td>12 Dec 2021</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <a href="javascript:void(0);"
+                                                                    class="btn btn-light btn-icon"
+                                                                    id="dropdownMenuLink15" data-bs-toggle="dropdown"
+                                                                    aria-expanded="true">
+                                                                    <i class="ri-equalizer-fill"></i>
+                                                                </a>
+                                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                                    aria-labelledby="dropdownMenuLink15">
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-eye-fill me-2 align-middle text-muted"></i>View</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
+                                                                    </li>
+                                                                    <li class="dropdown-divider"></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="avatar-sm">
+                                                                    <div
+                                                                        class="avatar-title bg-danger-subtle text-danger rounded fs-20">
+                                                                        <i class="ri-file-pdf-fill"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ms-3 flex-grow-1">
+                                                                    <h6 class="fs-14 mb-0"><a href="javascript:void(0);"
+                                                                            class="text-body">Bank
+                                                                            Management System</a></h6>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>PDF File</td>
+                                                        <td>8.89 MB</td>
+                                                        <td>24 Nov 2021</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <a href="javascript:void(0);"
+                                                                    class="btn btn-light btn-icon"
+                                                                    id="dropdownMenuLink3" data-bs-toggle="dropdown"
+                                                                    aria-expanded="true">
+                                                                    <i class="ri-equalizer-fill"></i>
+                                                                </a>
+                                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                                    aria-labelledby="dropdownMenuLink3">
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-eye-fill me-2 align-middle text-muted"></i>View</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
+                                                                    </li>
+                                                                    <li class="dropdown-divider"></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="avatar-sm">
+                                                                    <div
+                                                                        class="avatar-title bg-secondary-subtle text-secondary rounded fs-20">
+                                                                        <i class="ri-video-line"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ms-3 flex-grow-1">
+                                                                    <h6 class="fs-14 mb-0"><a href="javascript:void(0);"
+                                                                            class="text-body">Tour-video.mp4</a>
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>MP4 File</td>
+                                                        <td>14.62 MB</td>
+                                                        <td>19 Nov 2021</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <a href="javascript:void(0);"
+                                                                    class="btn btn-light btn-icon"
+                                                                    id="dropdownMenuLink4" data-bs-toggle="dropdown"
+                                                                    aria-expanded="true">
+                                                                    <i class="ri-equalizer-fill"></i>
+                                                                </a>
+                                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                                    aria-labelledby="dropdownMenuLink4">
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-eye-fill me-2 align-middle text-muted"></i>View</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
+                                                                    </li>
+                                                                    <li class="dropdown-divider"></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="avatar-sm">
+                                                                    <div
+                                                                        class="avatar-title bg-success-subtle text-success rounded fs-20">
+                                                                        <i class="ri-file-excel-fill"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ms-3 flex-grow-1">
+                                                                    <h6 class="fs-14 mb-0"><a href="javascript:void(0);"
+                                                                            class="text-body">Account-statement.xsl</a>
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>XSL File</td>
+                                                        <td>2.38 KB</td>
+                                                        <td>14 Nov 2021</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <a href="javascript:void(0);"
+                                                                    class="btn btn-light btn-icon"
+                                                                    id="dropdownMenuLink5" data-bs-toggle="dropdown"
+                                                                    aria-expanded="true">
+                                                                    <i class="ri-equalizer-fill"></i>
+                                                                </a>
+                                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                                    aria-labelledby="dropdownMenuLink5">
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-eye-fill me-2 align-middle text-muted"></i>View</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
+                                                                    </li>
+                                                                    <li class="dropdown-divider"></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="avatar-sm">
+                                                                    <div
+                                                                        class="avatar-title bg-info-subtle text-info rounded fs-20">
+                                                                        <i class="ri-folder-line"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ms-3 flex-grow-1">
+                                                                    <h6 class="fs-14 mb-0"><a href="javascript:void(0);"
+                                                                            class="text-body">Project
+                                                                            Screenshots Collection</a>
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>Floder File</td>
+                                                        <td>87.24 MB</td>
+                                                        <td>08 Nov 2021</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <a href="javascript:void(0);"
+                                                                    class="btn btn-light btn-icon"
+                                                                    id="dropdownMenuLink6" data-bs-toggle="dropdown"
+                                                                    aria-expanded="true">
+                                                                    <i class="ri-equalizer-fill"></i>
+                                                                </a>
+                                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                                    aria-labelledby="dropdownMenuLink6">
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-eye-fill me-2 align-middle"></i>View</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-download-2-fill me-2 align-middle"></i>Download</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-delete-bin-5-line me-2 align-middle"></i>Delete</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="avatar-sm">
+                                                                    <div
+                                                                        class="avatar-title bg-danger-subtle text-danger rounded fs-20">
+                                                                        <i class="ri-image-2-fill"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ms-3 flex-grow-1">
+                                                                    <h6 class="fs-14 mb-0"><a href="javascript:void(0);"
+                                                                            class="text-body">Velzon-logo.png</a>
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>PNG File</td>
+                                                        <td>879 KB</td>
+                                                        <td>02 Nov 2021</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <a href="javascript:void(0);"
+                                                                    class="btn btn-light btn-icon"
+                                                                    id="dropdownMenuLink7" data-bs-toggle="dropdown"
+                                                                    aria-expanded="true">
+                                                                    <i class="ri-equalizer-fill"></i>
+                                                                </a>
+                                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                                    aria-labelledby="dropdownMenuLink7">
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-eye-fill me-2 align-middle"></i>View</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-download-2-fill me-2 align-middle"></i>Download</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="javascript:void(0);"><i
+                                                                                class="ri-delete-bin-5-line me-2 align-middle"></i>Delete</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <a href="javascript:void(0);" class="text-success "><i
+                                                    class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i>
+                                                Load more </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal zoomIn" id="exampleModalgrid" tabindex="-1" aria-labelledby="exampleModalgridLabel" aria-modal="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalteamname">Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modalbodyteam">
+                {{--Appends Here from AJAX--}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="successModalLabel">Welcome {{$teamdata->teamname}}</h5>
+                <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="text-success fw-bold">You have successfully logged in.</p>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+@if(session('success'))
+<script>
+    $(document).ready(function(){
+            $('#successModal').modal('show');
+        });
+</script>
+@endif
+<script>
+    $(document).ready(function() {
+        $('.openModalBtn').on('click', function() {
+            var data = $(this).data('record-id');
+            console.log(data);
+            $('#modalbodyteam').empty();
+            var modalbody = `
+            <form action="javascript:void(0);">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div>
+                                <label for="emailInput" class="form-label">Member Photo</label>
+                                <img src="uploads/${data.memberphoto}" alt="Thumbnail"
+                                        class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <label for="emailInput" class="form-label">ID Proof Of Member</label>
+                                <img src="uploads/${data.idproofmember}" alt="Thumbnail"
+                                     class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mt-3">
+                                <label for="emailInput" class="form-label">Member Name</label>
+                                <input type="text" class="form-control" id="emailInput" readonly value="${data.member}">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Mobile</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.mobile}">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Age</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.age}">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Role</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.role}">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Gender</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.gender}">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Graduation Year</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.graduationyear}">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="mt-3">
+                                <label for="passwordInput" class="form-label">Blood Group</label>
+                                <input type="text" class="form-control" id="passwordInput" readonly value="${data.bloodgroup}">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="hstack gap-2 justify-content-end mt-3">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </form>
+            `;
+            $('#modalbodyteam').append(modalbody);
+
+        });
+    });
+</script>
 @endsection

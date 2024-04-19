@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Member extends Model
 {
     protected $fillable = [
+        'teamid',
         'member',
         'emailaddress',
         'mobile',

@@ -84,9 +84,9 @@ class StoreController extends Controller
         $data = Team::where('teamid', $credentials)->get();
 
         if ($data && Auth::guard('teams')->attempt($credentials)) {
-            return redirect()->route('teamdashboard');
+            return redirect()->route('teamdashboard')->with('success', 'Login successful!');
         }
-        return redirect()->route('teamlogin')->with('error', 'Invalid credentials');
+        return redirect()->route('teamlogin')->with('error', 'Invalid credentials Try Again');
     }
 
     public function logoutteamlogin()
@@ -98,6 +98,7 @@ class StoreController extends Controller
 
     public function createteammember(Request $req)
     {
+        // dd($req->all());
         try {
             $req->validate([
                 'emailaddress' => 'unique:members',
@@ -119,6 +120,7 @@ class StoreController extends Controller
             }
 
             Member::create([
+                'teamid' => $req->teamid,
                 'member' => $req->membername,
                 'emailaddress' => $req->emailaddress,
                 'mobile' => $req->mobile,

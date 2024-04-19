@@ -39,7 +39,7 @@
                         <p class="mb-0 text-white">&copy;
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> AUTO SPORTS INDIA. developed by YUVMEDIA
+                            </script>  Powered by Rudraaahwi Technology
                         </p>
                     </div>
                 </div>

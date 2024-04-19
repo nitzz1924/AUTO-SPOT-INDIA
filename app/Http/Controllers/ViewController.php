@@ -38,10 +38,12 @@ class ViewController extends Controller
     {
         return view('auth.UserAuth.thankyou');
     }
-    public function teamdashboard()
+    public function teamdashboard(Request $req)
     {
         if (Auth::guard('teams')->check()) {
-            return view('TeamPanel.dashboard');
+            $teamdata = Auth::guard('teams')->user();
+            $teammembers = Member::where('teamid',$req->teamid)->get();
+            return view('TeamPanel.dashboard',compact('teamdata','teammembers'));
         } else {
             return redirect()->route('teamlogin');
         }
@@ -53,12 +55,14 @@ class ViewController extends Controller
 
     public function teammemberaddview(Request $request)
     {
-        return view('TeamPanel.addteammember');
+         $teamdata = Auth::guard('teams')->user();
+        return view('TeamPanel.addteammember',compact('teamdata'));
     }
 
     public function allteammembersview(Request $request)
     {
-        $teammembers = Member::get();
+        $teammembers = Member::where('teamid',$request->teamid)->get();
         return view('TeamPanel.viewmem',compact('teammembers'));
     }
+
 }

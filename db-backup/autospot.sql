@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2024 at 10:28 AM
+-- Generation Time: Apr 19, 2024 at 12:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,6 +32,14 @@ CREATE TABLE `cache` (
   `value` mediumtext NOT NULL,
   `expiration` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cache`
+--
+
+INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
+('49e514196e5f567a43983f2f3395a96f', 'i:1;', 1713520536),
+('49e514196e5f567a43983f2f3395a96f:timer', 'i:1713520536;', 1713520536);
 
 -- --------------------------------------------------------
 
@@ -134,6 +142,7 @@ INSERT INTO `masters` (`id`, `label`, `value`, `type`, `status`, `created_at`, `
 
 CREATE TABLE `members` (
   `id` int(11) NOT NULL,
+  `teamid` varchar(255) DEFAULT NULL,
   `member` varchar(255) NOT NULL,
   `emailaddress` varchar(255) NOT NULL,
   `mobile` varchar(255) NOT NULL,
@@ -152,9 +161,12 @@ CREATE TABLE `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`id`, `member`, `emailaddress`, `mobile`, `age`, `role`, `gender`, `graduationyear`, `bloodgroup`, `memberphoto`, `idproofmember`, `created_at`, `updated_at`) VALUES
-(2, 'Terrorists', 'ts@gmail.com', '5958451259', '32', 'Shooting', 'male', '2024', '2024', '1713335098.jpg', '1713335098.jpg', '2024-04-17 00:54:58', '2024-04-17 00:54:58'),
-(3, 'CT', 'ct@gmail.com', '5555555555', '12', 'Shooting', 'male', '2022', '2023', '1713335303.jpg', '1713335303.jpg', '2024-04-17 00:58:23', '2024-04-17 00:58:23');
+INSERT INTO `members` (`id`, `teamid`, `member`, `emailaddress`, `mobile`, `age`, `role`, `gender`, `graduationyear`, `bloodgroup`, `memberphoto`, `idproofmember`, `created_at`, `updated_at`) VALUES
+(101, NULL, 'Terrorists', 'ts@gmail.com', '2222222222', '12', 'Shooting', 'male', '2024', '2023', '1713435672.png', '1713435672.png', '2024-04-18 04:51:12', '2024-04-18 04:51:12'),
+(102, NULL, 'CT', 'ct@gmail.com', '1234567898', '32', 'Shooting', 'male', '2022', '2023', '1713435880.jpeg', '1713435880.jpeg', '2024-04-18 04:54:40', '2024-04-18 04:54:40'),
+(104, NULL, 'Shivaaye', 'sh@gmail.com', '1234567897', '13', 'Race', 'male', '2024', '2022', '1713438475.jpg', '1713438475.jpg', '2024-04-18 05:37:55', '2024-04-18 05:37:55'),
+(105, NULL, 'Shaolin', 'shao@gmail.com', '1234567897', '32', 'Fighting', 'male', '2023', 'B +ve', '1713438897.jpg', '1713438897.jpg', '2024-04-18 05:44:57', '2024-04-18 05:44:57'),
+(107, 'MAC00025', 'admin', 'add@gmail.com', '123456', '21', 'admin', 'male', '2024', 'AB +ve', '1713508049.png', '1713508049.png', '2024-04-19 00:57:29', '2024-04-19 00:57:29');
 
 -- --------------------------------------------------------
 
@@ -230,7 +242,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('WHgIe3OW9XMGfgGzqEbEzyugyzJJZ7qIAyBzxGXi', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiRlNRTzhoaUNiVjBYdDlEV1MwRnBSZEtTQklCblhhUldpOERVU0t4YSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hbGx0ZWFtbWVtYmVyc3ZpZXciO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl90ZWFtc181OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI1O30=', 1713335485);
+('oUa0rTgAXraKtkanyleYUo3YFYK552hsAa4sfpDA', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', 'YTo1OntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozNToiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3ZpZXdzdWJtYXN0ZXIiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoiM2xCeUMzV1llbjRFUHZEN2hMcnRreVNDZUFSbEJ6WFJHY21INmRjNiI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMiRJL2suUzg2cUgveVlYek1NM1A3UHEuVDVWNks3Tm5hV09pUHdMWXVoai5vNzJ3L3h5MXBrSyI7fQ==', 1713520488);
 
 -- --------------------------------------------------------
 
@@ -272,7 +284,8 @@ CREATE TABLE `teams` (
 INSERT INTO `teams` (`id`, `teamid`, `fullname`, `mobilenumber`, `verifyotp`, `teamname`, `captainname`, `institutionname`, `coachname`, `institutetype`, `instituterecognizedby`, `email`, `teamsize`, `alternatecontactnumber`, `communicationaddress`, `city`, `state`, `buggy`, `quad`, `password`, `status`, `verifystatus`, `created_at`, `updated_at`) VALUES
 (23, 'MAC00023', 'abc', '8209165518', '499028', 'terrorists', 'abc', 'abcd institute', 'king', 'College', 'king', 'ans@gmail.com', '5', '2154589526', '305001', 'Ajmer', 'Rajasthan', 'electric', NULL, '$2y$12$HoQeAgzQqx.hMNyOy9zWruXruFqJyxL2V2gO516sUae3dPydyvRUe', '0', '1', '2024-04-13 03:48:13', '2024-04-13 05:14:06'),
 (24, 'MAC00024', 'kishan', '2236254898', '395530', 'kishanapks', 'abcddd', 'kishan institute', 'king', 'College', 'king', 'ks@gmail.com', '20', '2154589526', '305001', 'Ajmer', 'Rajasthan', 'combustion', 'combustion', '$2y$12$7hJsHvKOCt9n/7stgeOheuhmm2t6AEboSt73Gwl0HNBzRDrzZYhcO', '0', '1', '2024-04-13 05:16:21', '2024-04-13 05:17:38'),
-(25, 'MAC00025', 'testing', '6666666666', '156905', 'testingsszone', 'test', 'test', 'test', 'University', 'testt', 'testing@gmail.com', '6', '2154589526', '305002', 'Ajmer', 'Rajasthan', 'combustion', 'electric', '$2y$12$YGzrByYheywIw1uAomlgj.VqlmoDM6RY8zQ9MlaOV6puoWrFEcuVC', '0', '1', '2024-04-15 05:25:45', '2024-04-15 05:27:00');
+(25, 'MAC00025', 'testing', '6666666666', '156905', 'testingsszone', 'test', 'test', 'test', 'University', 'testt', 'testing@gmail.com', '6', '2154589526', '305002', 'Ajmer', 'Rajasthan', 'combustion', 'electric', '$2y$12$YGzrByYheywIw1uAomlgj.VqlmoDM6RY8zQ9MlaOV6puoWrFEcuVC', '0', '1', '2024-04-15 05:25:45', '2024-04-15 05:27:00'),
+(26, NULL, 'avengers', '1111111111', '159759', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '1', '2024-04-18 23:53:31', '2024-04-18 23:53:53');
 
 -- --------------------------------------------------------
 
@@ -418,7 +431,7 @@ ALTER TABLE `masters`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -436,7 +449,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `users`

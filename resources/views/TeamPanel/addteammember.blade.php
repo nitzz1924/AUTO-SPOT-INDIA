@@ -52,6 +52,7 @@
                                         <label for="placeholderInput" class="form-label">Name</label>
                                         <input type="text" class="form-control" id=""
                                             placeholder="enter team member name" name="membername">
+                                        <input type="hidden" name="teamid" value="{{$teamdata->teamid}}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -155,48 +156,6 @@
             </div>
         </div>
     </div>
-</div>
-<div id="showmasteredit" class="modal fadeInRight" tabindex="-1" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content border-0 overflow-hidden">
-            <div class="modal-header p-3 text-center">
-                <h4 class="card-title mb-0 ">BTech Mart</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="alert alert-success  rounded-0 mb-0">
-                <p class="mb-0 text-center">Edit Category</p>
-            </div>
-            <div class="modal-body">
-                <form action="javascript:void(0);">
-                    <div class="row  g-3 align-items-center">
-                        <div class="col-sm-4">
-                            <div>
-                                <label for="placeholderInput" class="form-label">Label</label>
-                                <input type="text" class="form-control" id="" placeholder="enter label" name="label">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div>
-                                <label for="placeholderInput" class="form-label">Value</label>
-                                <input type="text" class="form-control" id="valueval" placeholder="enter value"
-                                    name="value" value="">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div>
-                                <label for="placeholderInput" class="form-label">Upload Image</label>
-                                <input type="file" class="form-control" id="image" placeholder="enter color"
-                                    name="image">
-                            </div>
-                        </div>
-                        <div class="col-auto text-center w-100">
-                            <button type="submit" class="btn btn-primary">Update</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
