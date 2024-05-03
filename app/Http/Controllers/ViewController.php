@@ -61,7 +61,8 @@ class ViewController extends Controller
 
     public function allteammembersview(Request $request)
     {
-        $teammembers = Member::where('teamid',$request->teamid)->get();
+        $teamdata = Auth::guard('teams')->user();
+        $teammembers = Member::where('teamid',$teamdata->teamid)->get();
         return view('TeamPanel.viewmem',compact('teammembers'));
     }
 

@@ -40,6 +40,20 @@
                                 <h5 class="card-title mb-1">{{ $row->member }}</h5>
                                 <p class="text-muted mb-0">{{ $row->emailaddress }}</p>
                             </div>
+                            <div class="float-end">
+                                <div class="dropdown card-header-dropdown">
+                                    <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <span class="text-muted fs-18"><i
+                                                class="mdi mdi-dots-vertical align-middle"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="/memberedit/{{ $row->id }}"><i
+                                                class="bi bi-pencil"></i>&nbsp;&nbsp;Edit</a>
+                                        <a class="dropdown-item deletebtn" href="#" data-id="{{ $row->id }}" data-index="{{ $index }}"><i class="bi bi-trash"></i>&nbsp;&nbsp;Delete</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <h6 class="mb-1">MEM{{ $row->id }}</h6>
                         <p class="card-text text-muted">{{ $row->role }}</p>
@@ -125,6 +139,29 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.deletebtn').click(function() {
+            var id = $(this).data('id');
+            var index = $(this).data('index');
+            console.log(id);
+            console.log(index);
+            $.ajax({
+                url: '/deleteteamcard',
+                type: 'POST',
+                data: { id: id, index: index },
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    window.location.reload();
+                    console.log(response);
+                }
+            });
+        });
+    });
+</script>
+
 <script>
     $(document).ready(function() {
         $('.openModalBtn').on('click', function() {

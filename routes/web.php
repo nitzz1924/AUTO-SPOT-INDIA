@@ -1,5 +1,6 @@
 <?php
 #--------------------------------------------------🙏🔱ॐ नमः शिवाय🔱🙏-------------------------------------
+use App\Http\Controllers\EditController;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\StoreController;
@@ -49,3 +50,6 @@ Route::get('/logoutteamlogin', [StoreController::class, 'logoutteamlogin'])->nam
 Route::get('/teammemberaddview', [ViewController::class, 'teammemberaddview'])->name('teammemberaddview');
 Route::post('/createteammember', [StoreController::class, 'createteammember'])->name('createteammember');
 Route::get('/allteammembersview', [ViewController::class, 'allteammembersview'])->name('allteammembersview');
+Route::get('/memberedit/{id}',[EditController::class,'memberedit'])->name('memberedit');
+Route::post('/update_team_member',[EditController::class,'update_team_member'])->name('update_team_member');
+Route::post('/deleteteamcard',[EditController::class,'deleteteamcard'])->name('deleteteamcard');
