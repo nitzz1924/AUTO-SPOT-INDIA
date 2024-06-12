@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2024 at 12:11 PM
+-- Generation Time: Jun 12, 2024 at 06:37 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,8 +38,8 @@ CREATE TABLE `cache` (
 --
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
-('49e514196e5f567a43983f2f3395a96f', 'i:1;', 1713520536),
-('49e514196e5f567a43983f2f3395a96f:timer', 'i:1713520536;', 1713520536);
+('49e514196e5f567a43983f2f3395a96f', 'i:1;', 1718166732),
+('49e514196e5f567a43983f2f3395a96f:timer', 'i:1718166732;', 1718166732);
 
 -- --------------------------------------------------------
 
@@ -162,11 +162,10 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`id`, `teamid`, `member`, `emailaddress`, `mobile`, `age`, `role`, `gender`, `graduationyear`, `bloodgroup`, `memberphoto`, `idproofmember`, `created_at`, `updated_at`) VALUES
-(101, NULL, 'Terrorists', 'ts@gmail.com', '2222222222', '12', 'Shooting', 'male', '2024', '2023', '1713435672.png', '1713435672.png', '2024-04-18 04:51:12', '2024-04-18 04:51:12'),
-(102, NULL, 'CT', 'ct@gmail.com', '1234567898', '32', 'Shooting', 'male', '2022', '2023', '1713435880.jpeg', '1713435880.jpeg', '2024-04-18 04:54:40', '2024-04-18 04:54:40'),
-(104, NULL, 'Shivaaye', 'sh@gmail.com', '1234567897', '13', 'Race', 'male', '2024', '2022', '1713438475.jpg', '1713438475.jpg', '2024-04-18 05:37:55', '2024-04-18 05:37:55'),
-(105, NULL, 'Shaolin', 'shao@gmail.com', '1234567897', '32', 'Fighting', 'male', '2023', 'B +ve', '1713438897.jpg', '1713438897.jpg', '2024-04-18 05:44:57', '2024-04-18 05:44:57'),
-(107, 'MAC00025', 'admin', 'add@gmail.com', '123456', '21', 'admin', 'male', '2024', 'AB +ve', '1713508049.png', '1713508049.png', '2024-04-19 00:57:29', '2024-04-19 00:57:29');
+(101, NULL, 'Terrorists', 'ts@gmail.com', '2222222222', '19', 'Shooting', 'male', '2024', 'A +ve', '1714728879.svg', NULL, '2024-04-18 04:51:12', '2024-05-03 04:08:01'),
+(102, NULL, 'CT', 'ct@gmail.com', '1234567898', '32', 'Shooting', 'male', '2022', 'A +ve', '1714730077.svg', '1714730389.png', '2024-04-18 04:54:40', '2024-05-03 04:29:49'),
+(107, 'MAC00025', 'admin', 'add@gmail.com', '123456', '21', 'admin', 'male', '2024', 'AB +ve', '1713508049.png', '1713508049.png', '2024-04-19 00:57:29', '2024-04-19 00:57:29'),
+(108, 'MAC00025', 'Shaolin Monk', 'shao@gmail.com', '8209165518', '19', 'Race', 'male', '2024', 'A -ve', '1714732061.jpg', '1714732061.svg', '2024-05-03 04:57:41', '2024-05-03 04:57:41');
 
 -- --------------------------------------------------------
 
@@ -242,7 +241,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('oUa0rTgAXraKtkanyleYUo3YFYK552hsAa4sfpDA', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', 'YTo1OntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozNToiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3ZpZXdzdWJtYXN0ZXIiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoiM2xCeUMzV1llbjRFUHZEN2hMcnRreVNDZUFSbEJ6WFJHY21INmRjNiI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMiRJL2suUzg2cUgveVlYek1NM1A3UHEuVDVWNks3Tm5hV09pUHdMWXVoai5vNzJ3L3h5MXBrSyI7fQ==', 1713520488);
+('OK9CqzSq2KXLm9PQPoKGI0lWe5252uLSnbN50pGV', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTo0OntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czo0MDoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2FsbHRlYW1tZW1iZXJzdmlldyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NjoiX3Rva2VuIjtzOjQwOiJyMG9JMjhlTEM3UmdIb05NSFhEQ3FjVW1oZEsxdkszTE5ISEZIYTk2IjtzOjUyOiJsb2dpbl90ZWFtc181OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI1O30=', 1714742185),
+('TSz7cCzLkbVy9QDTZJkJgqjs6UzGyb51JRc4nzLM', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiY2VjMkVxTmt4OEk4U21mOW1VYVA1ZUlVZGV1cmhNcWJFNkt5aU8yRiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hbGx0ZWFtbWVtYmVyc3ZpZXciO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl90ZWFtc181OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI1O30=', 1714797689),
+('YAICW6I4xf7dWw6hh8U5Fg9HcIu7TndvaD1DImwm', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiU0tGaGNtd21EaHZ1bnFYRlVJYjl0WjFZd0Q2UVlTZ1VjTWxIZ0psdCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEyJEkvay5TODZxSC95WVh6TU0zUDdQcS5UNVY2SzdObmFXT2lQd0xZdWhqLm83MncveHkxcGtLIjtzOjUyOiJsb2dpbl90ZWFtc181OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI1O30=', 1718166894);
 
 -- --------------------------------------------------------
 
@@ -431,7 +432,7 @@ ALTER TABLE `masters`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `migrations`
